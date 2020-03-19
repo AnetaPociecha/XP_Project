@@ -1,0 +1,4 @@
+- Klamry w tej samej linii, Spacje(domyślne formatowanie IDE)
+- angielskie nazwy klas/metod/zmiennych, komentarze po angielsku
+- camelCase
+- Podział na pakiety, jedna klasa na plik
