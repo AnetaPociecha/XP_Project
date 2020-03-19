@@ -1,0 +1,10 @@
+1. Pobranie i wylistowanie aktualnych tytułów artykułów. Użytkownik dostaje listę z tytułami dostępnych artykułów i ma możliwość wybrania interakcji z pozycją.
+2. Wypisanie treści artykułu - Użytkownik po wybraniu artykułu może przeczytać jego zawartość.
+3. Filtrowanie po tytule, dacie, treści - Użytkownik ma możliwośc wybrania parametrów filtrujących artykuły przed wyszukaniem
+4. Możliwośc zapisania lokalnie artykułów - Zapis artykułów do folderu z artykułami
+5. Dodawanie do ulubionych - Oflagowanie artykułu jako "ulubiony"
+6. Wypisanie atrybuty/metadane artykułu(autor, rozmiar, data wprowadzenia na stronę) - Użytkownik może zapoznać się informacji na temat autora i innych danych o artykule
+7. Aktualizacja artykułów co określony czas - Użytkownik ma możliwość wybrania interwału czasowego po którym nastąpi aktualizacja listy artykułów
+8. Powiadomienie o nowych artykułach - Użytkownik dostaje powiadomienie o nowych artykułach, które mogą go zainteresować
+9. Aplikacja uruchamiana przez CLI - Użytkownik włącza oraz wchodzi w interakcję z aplikacją posługując się wierszem linii poleceń
+10. Blokowanie artykułów o określonej treści - Użytkownik może dodawać artykuły o pewnych treściach do "Czarnej listy", blokując ich wylistowanie
