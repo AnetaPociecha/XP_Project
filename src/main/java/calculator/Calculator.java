@@ -1,4 +1,4 @@
-package main.calculator;
+package calculator;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,14 +16,17 @@ public class Calculator {
         String preprocessedList = stripRegexOnSplitValues(preprocessString(numbersList));
         if (preprocessedList.isEmpty())
             return 0;
-        if (Pattern.compile(getInvalidFormatRegex()).matcher(numbersList).find())
+        if (Pattern.compile(getInvalidFormatRegex()).matcher(preprocessedList).find())
             throw new CalculatorInputFormatException("Input contains some invalid formatting");
-        Stream<Integer> numbers = streamInts(preprocessedList);
-        List<String> negatives = numbers.filter((elem) -> elem < 0).map(Object::toString).collect(Collectors.toList());
+
+        List<String> negatives = streamInts(preprocessedList)
+                .filter((elem) -> elem < 0)
+                .map(Object::toString)
+                .collect(Collectors.toList());
         if (negatives.size() > 0)
             throw new CalculatorInputFormatException("Negatives not allowed!" + String.join(", ", negatives));
 
-        return numbers.reduce(0, Integer::sum);
+        return streamInts(preprocessedList).reduce(0, Integer::sum);
     }
 
     private Stream<Integer> streamInts(String numbersList) {

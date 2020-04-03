@@ -1,7 +1,7 @@
 package bitParserTests;
 
-import main.bitparser.BitParser;
-import main.bitparser.BitParserInvalidInputException;
+import bitparser.BitParser;
+import bitparser.BitParserInvalidInputException;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;

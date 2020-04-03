@@ -1,4 +1,4 @@
-package main.bitparser;
+package bitparser;
 
 import java.util.ArrayList;
 import java.util.Arrays;

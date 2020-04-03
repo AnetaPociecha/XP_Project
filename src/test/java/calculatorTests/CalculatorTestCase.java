@@ -1,7 +1,7 @@
 package calculatorTests;
 
-import main.calculator.Calculator;
-import main.calculator.CalculatorInputFormatException;
+import calculator.Calculator;
+import calculator.CalculatorInputFormatException;
 import org.junit.Test;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;

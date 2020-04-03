@@ -1,4 +1,4 @@
-package main.bitparser;
+package bitparser;
 
 public class BitParserInvalidInputException extends RuntimeException {
     public BitParserInvalidInputException(String errorMessage) {

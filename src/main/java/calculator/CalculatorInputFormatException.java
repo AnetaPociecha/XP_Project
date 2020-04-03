@@ -1,4 +1,4 @@
-package main.calculator;
+package calculator;
 
 public class CalculatorInputFormatException extends Exception {
     public CalculatorInputFormatException(String errorMessage) {
