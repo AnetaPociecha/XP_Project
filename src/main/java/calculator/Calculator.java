@@ -10,7 +10,7 @@ import java.util.stream.Stream;
 
 public class Calculator {
 
-    private ArrayList<String> delimeters = new ArrayList<>(List.of(",", "\n"));
+    private ArrayList<String> delimeters = new ArrayList<>(Arrays.asList(",", "\n"));
 
     public int addNumbers(String numbersList) throws CalculatorInputFormatException {
         String preprocessedList = stripRegexOnSplitValues(preprocessString(numbersList));

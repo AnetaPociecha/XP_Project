@@ -9,7 +9,7 @@ public class BitParser {
     public int noOfBits1(String numbers) throws BitParserInvalidInputException {
         String[] splitNumbersArr = numbers.replaceAll("[\\s;\n]+", ",").split(",");
         ArrayList<String> splitNumbers = new ArrayList<>(Arrays.asList(splitNumbersArr));
-        if (splitNumbers.get(0).isBlank() && splitNumbers.size() == 1)
+        if (splitNumbers.get(0).isEmpty() && splitNumbers.size() == 1)
             return 0;
         return splitNumbers
                 .stream()
