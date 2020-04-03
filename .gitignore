@@ -70,7 +70,5 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-# Rejowski ignores
-rejowski/bin/*
 # Mac creates this files, ignore them
 .DS_Store*
