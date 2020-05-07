@@ -7,8 +7,10 @@
         <groupId>com.agh.technology.xp.project.webscraper</groupId>
         <version>1</version>
     </parent>
+    <groupId>com.agh.technology.xp.project.webscraper.testModule</groupId>
+    <artifactId>test-module</artifactId>
+
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>test-module</artifactId>
 
 </project>
