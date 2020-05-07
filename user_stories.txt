@@ -1,40 +1,54 @@
+1 SP = 1,2h
+suma 67,2h
+
 1. Pobranie i wylistowanie aktualnych tytułów artykułów.
    Użytkownik dostaje listę z tytułami dostępnych artykułów i ma możliwość wybrania interakcji z pozycją.
    Estymacja: 12h
    SP: 13 - wskaźnik
+   Estymacja 2: 15,6h
 2. Wypisanie treści artykułu.
    Użytkownik po wybraniu artykułu może przeczytać jego zawartość.
    Estymacja: 10h
    SP: 8
+   Estymacja 2: 9,6h
 3. Filtrowanie po tytule, dacie, treści.
    Użytkownik ma możliwośc wybrania parametrów filtrujących artykuły przed wyszukaniem.
    Estymacja: 4h
    SP: 5
+   Estymacja 2: 6h
 4. Możliwośc zapisania lokalnie artykułów.
    Zapis artykułów do folderu z artykułami
    Estymacja: 4h
    SP: 5
+   Estymacja 2: 6h
 5. Dodawanie do ulubionych.
    Oflagowanie artykułu jako "ulubiony"
    Estymacja: 2h
    SP: 3
+   Estymacja 2: 3,6h
 6. Wypisanie atrybuty/metadane artykułu(autor, rozmiar, data wprowadzenia na stronę)
    Użytkownik może zapoznać się informacji na temat autora i innych danych o artykule
    Estymacja: 4h
    SP: 5
+   Estymacja 2: 6h
 7. Aktualizacja artykułów co określony czas.
    Użytkownik ma możliwość wybrania interwału czasowego po którym nastąpi aktualizacja listy artykułów
    Estymacja: 6h
    SP: 5
+   Estymacja 2: 6h
+   Historyjka referencyjna
 8. Powiadomienie o nowych artykułach.
    Użytkownik dostaje powiadomienie o nowych artykułach, które mogą go zainteresować
    Estymacja: 5h
    SP: 5
+   Estymacja 2: 6h
 9. Aplikacja uruchamiana przez CLI.
    Użytkownik włącza oraz wchodzi w interakcję z aplikacją posługując się wierszem linii poleceń.
    Estymacja: 3h
    SP: 5
+   Estymacja 2: 6h
 10. Blokowanie artykułów o określonej treści.
    Użytkownik może dodawać artykuły o pewnych treściach do "Czarnej listy", blokując ich wylistowanie.
    Estymacja: 3h
    SP: 3
+   Estymacja 2: 3,6h
