@@ -1,4 +1,4 @@
-package com.agh.technology.xp.project.webscraper.articlescraper;
+package com.agh.technology.xp.project.webscraper.runner.articlescraper;
 
 import java.io.IOException;
 

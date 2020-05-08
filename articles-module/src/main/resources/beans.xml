@@ -6,6 +6,6 @@
 
     <!-- bean definitions here -->
 
-    <bean id="parser" class="com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParser" />
+    <bean id="parser" class="com.agh.technology.xp.project.webscraper.runner.articles.parser.ArticleHeadersParser" />
 
 </beans>

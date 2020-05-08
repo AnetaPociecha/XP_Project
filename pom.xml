@@ -8,6 +8,7 @@
     <modules>
         <module>articles-module</module>
         <module>articlescraper</module>
+        <module>application-runner</module>
     </modules>
 
 

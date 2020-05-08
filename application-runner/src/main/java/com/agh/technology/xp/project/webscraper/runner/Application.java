@@ -1,7 +1,7 @@
-package com.agh.technology.xp.project.webscraper;
+package com.agh.technology.xp.project.webscraper.runner;
 
 
-import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParser;
+import com.agh.technology.xp.project.webscraper.runner.articles.parser.ArticleHeadersParser;
 
 public class Application {
 
