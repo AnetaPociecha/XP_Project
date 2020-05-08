@@ -1,7 +1,8 @@
-package com.agh.technology.xp.project.webscraper.runner;
+package com.agh.technology.xp.project.webscraper;
 
-import com.agh.technology.xp.project.webscraper.runner.articles.datamodel.ArticleContainer;
-import com.agh.technology.xp.project.webscraper.runner.articles.parser.ArticleHeadersParser;
+import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
+import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
+import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParser;
 
 import java.io.IOException;
 
