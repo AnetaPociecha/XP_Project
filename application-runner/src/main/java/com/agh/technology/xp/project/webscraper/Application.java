@@ -8,6 +8,6 @@ public class Application {
 
     public static void main(String[] args) {
         ApplicationDelegate delegate = new ApplicationDelegate(new ArticleHeadersParser());
-        delegate.testGetArticles();
+        delegate.initializeCLI();
     }
 }
