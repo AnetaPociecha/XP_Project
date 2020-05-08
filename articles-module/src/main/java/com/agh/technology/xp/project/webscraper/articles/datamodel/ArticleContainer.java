@@ -1,4 +1,4 @@
-package com.agh.technology.xp.project.webscraper.runner.articles.datamodel;
+package com.agh.technology.xp.project.webscraper.articles.datamodel;
 
 import java.util.List;
 import java.util.stream.Collectors;

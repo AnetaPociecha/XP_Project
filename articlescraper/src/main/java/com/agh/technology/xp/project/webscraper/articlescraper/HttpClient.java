@@ -1,4 +1,4 @@
-package com.agh.technology.xp.project.webscraper.runner.articlescraper;
+package com.agh.technology.xp.project.webscraper.articlescraper;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
