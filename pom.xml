@@ -7,6 +7,7 @@
     <version>1</version>
     <modules>
         <module>articles-module</module>
+        <module>articlescraper</module>
     </modules>
 
 
@@ -24,6 +25,12 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.agh.technology.xp.project.webscraper.articlescraper</groupId>
+            <artifactId>articlescraper</artifactId>
+            <version>1</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
