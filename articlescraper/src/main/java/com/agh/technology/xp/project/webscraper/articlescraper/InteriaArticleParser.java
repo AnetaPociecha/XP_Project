@@ -9,7 +9,9 @@ import java.util.stream.Collectors;
 
 public class InteriaArticleParser {
     public InteriaArticle parse(Document document){
-        String title = document.title();
+
+        Elements titleElements = document.getElementsByAttributeValue("itemprop", "name headline");
+        String title = titleElements.text();
 
         Elements articleBody = document.getElementsByAttributeValue("itemprop", "articleBody");
         List<Element> paragraphs = articleBody.select("p");

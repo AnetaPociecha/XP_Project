@@ -13,7 +13,7 @@ class InteriaArticleParserTest {
         Document document = MockDocument.get();
         InteriaArticleParser parser = new InteriaArticleParser();
         InteriaArticle article = parser.parse(document);
-        assertEquals("Sekretarz generalny ONZ Antonio Guterres: Pandemia uruchomiła tsunami nienawiści - Fakty w INTERIA.PL", article.getTitle());
+        assertEquals(MockDocument.TITLE, article.getTitle());
         assertEquals(MockDocument.ARTICLE_CONTENT, article.getContent());
     }
 

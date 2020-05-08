@@ -9,5 +9,4 @@ public class HttpClient implements IHttpClient{
      public Document getDocument(String url) throws IOException {
           return Jsoup.connect(url).get();
      }
-
 }
