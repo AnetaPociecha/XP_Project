@@ -9,6 +9,9 @@ public class ApplicationDelegate {
 
     private ArticleHeadersParser parser;
 
+    @SuppressWarnings("unused")
+    ApplicationDelegate(){}
+
     ApplicationDelegate(ArticleHeadersParser parser) {
         this.parser = parser;
     }
