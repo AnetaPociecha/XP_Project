@@ -1,7 +1,7 @@
 import com.agh.technology.xp.project.webscraper.articlescraper.HttpRequestException;
 import com.agh.technology.xp.project.webscraper.articlescraper.IHttpClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticle;
-import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleClient;
+import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleDetailsClient;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
 
@@ -13,8 +13,8 @@ class InteriaArticleClientTest {
 
     @Test
     void getInteriaArticle() throws HttpRequestException {
-        InteriaArticleClient validClient = new InteriaArticleClient(new MockHttpClient());
-        InteriaArticleClient invalidClient = new InteriaArticleClient(new ExceptionHttpClient());
+        InteriaArticleDetailsClient validClient = new InteriaArticleDetailsClient(new MockHttpClient());
+        InteriaArticleDetailsClient invalidClient = new InteriaArticleDetailsClient(new ExceptionHttpClient());
 
         assertDoesNotThrow(() -> validClient.getInteriaArticle(""));
         assertThrows(HttpRequestException.class, () -> invalidClient.getInteriaArticle(""), "test" );

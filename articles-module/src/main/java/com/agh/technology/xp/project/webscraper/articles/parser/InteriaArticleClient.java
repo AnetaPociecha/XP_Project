@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class ArticleHeadersParser {
+public class InteriaArticleClient {
     private static final List<String> sectionsToParse = Arrays.asList("special", "facts", "business", "sport", "automotive", "technologies", "tiles");
 
     public ArticleContainer fetchAndParse(String targetUrl) throws IOException {

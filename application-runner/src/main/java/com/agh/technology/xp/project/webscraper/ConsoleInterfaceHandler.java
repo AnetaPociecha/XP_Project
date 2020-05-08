@@ -3,9 +3,9 @@ package com.agh.technology.xp.project.webscraper;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleHeader;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSection;
-import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParser;
+import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticleClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticle;
-import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleClient;
+import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleDetailsClient;
 import com.agh.technology.xp.project.webscraper.exception.UserInputException;
 
 import java.io.IOException;
@@ -14,19 +14,19 @@ import java.util.Scanner;
 
 public class ConsoleInterfaceHandler {
 
-    private ArticleHeadersParser parser;
     private static Scanner scanner = new Scanner(System.in);
-    private InteriaArticleClient interiaClient;
+    private InteriaArticleClient interiaArticleClient;
+    private InteriaArticleDetailsClient interiaArticleDetailsClient;
 
-    ConsoleInterfaceHandler(ArticleHeadersParser parser, InteriaArticleClient interiaClient) {
-        this.parser = parser;
-        this.interiaClient = interiaClient;
+    ConsoleInterfaceHandler(InteriaArticleClient parser, InteriaArticleDetailsClient interiaClient) {
+        this.interiaArticleClient = parser;
+        this.interiaArticleDetailsClient = interiaClient;
     }
 
     void runCLI() {
         try {
             clearScreen();
-            ArticleContainer container = parser.fetchAndParse("https://www.interia.pl/");
+            ArticleContainer container = interiaArticleClient.fetchAndParse("https://www.interia.pl/");
             System.out.println("Wybierz sekcję, której artykuły chcesz przeglądać:");
             List<ArticleSection> sections = container.getAllSections();
             sections.remove(0);
@@ -53,7 +53,7 @@ public class ConsoleInterfaceHandler {
             validateUserInput(articleChoice+1, sectionChoice.getArcticleHeaders().size()+1, "Wybrałeś artykuł który nie istnieje!");
 
             String articleUrlChoice = sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
-            InteriaArticle article = interiaClient.getInteriaArticle(articleUrlChoice);
+            InteriaArticle article = interiaArticleDetailsClient.getInteriaArticle(articleUrlChoice);
 
             clearScreen();
             System.out.println(article.getContent());
@@ -74,10 +74,10 @@ public class ConsoleInterfaceHandler {
 
     private void shouldExitOrRerun(){
         System.out.println("Aby zakończyć wpisz \"X\", aby wrócić do wyboru treści wpisz \"R\"");
-        String whatNextChoice = scanner.nextLine();
-        if(whatNextChoice.equals("R") || whatNextChoice.equals("r")){
+        String whatNextChoice = scanner.nextLine().toLowerCase();
+        if(whatNextChoice.equals("r")){
             runCLI();
-        }else if (whatNextChoice.equals("X") || whatNextChoice.equals("x")){
+        }else if (whatNextChoice.equals("x")){
             System.exit(0);
         } else{
             shouldExitOrRerun();
