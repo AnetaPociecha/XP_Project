@@ -1,6 +1,5 @@
-package interiaarticle;
+package com.agh.technology.xp.project.webscraper.articlescraper;
 
-import interiaarticle.model.InteriaArticle;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;

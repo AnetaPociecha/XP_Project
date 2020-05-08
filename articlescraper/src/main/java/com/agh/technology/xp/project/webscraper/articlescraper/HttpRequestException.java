@@ -1,4 +1,4 @@
-package interiaarticle;
+package com.agh.technology.xp.project.webscraper.articlescraper;
 
 import java.io.IOException;
 

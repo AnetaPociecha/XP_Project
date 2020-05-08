@@ -1,11 +1,11 @@
-package interiaarticle;
+package com.agh.technology.xp.project.webscraper.articlescraper;
 
-import interiaarticle.model.InteriaArticle;
 import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 
 public class InteriaArticleClient {
+
     public InteriaArticle downloadAndParseArticle(String articleUrl) throws HttpRequestException {
         HttpClient client = new HttpClient();
 

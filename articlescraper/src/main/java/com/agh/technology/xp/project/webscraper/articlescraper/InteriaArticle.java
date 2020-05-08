@@ -1,4 +1,4 @@
-package interiaarticle.model;
+package com.agh.technology.xp.project.webscraper.articlescraper;
 
 public class InteriaArticle {
 
