@@ -6,6 +6,7 @@ import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSectio
 import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParser;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticle;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleClient;
+import com.agh.technology.xp.project.webscraper.exception.UserInputException;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +15,6 @@ import java.util.Scanner;
 public class ConsoleInterfaceHandler {
 
     private ArticleHeadersParser parser;
-    private ArticleContainer container;
     private static Scanner scanner = new Scanner(System.in);
     private InteriaArticleClient interiaClient;
 
@@ -23,10 +23,10 @@ public class ConsoleInterfaceHandler {
         this.interiaClient = interiaClient;
     }
 
-    void initializeCLI() {
+    void runCLI() {
         try {
             clearScreen();
-            this.container = parser.fetchAndParse("https://www.interia.pl/");
+            ArticleContainer container = parser.fetchAndParse("https://www.interia.pl/");
             System.out.println("Wybierz sekcję, której artykuły chcesz przeglądać:");
             List<ArticleSection> sections = container.getAllSections();
             sections.remove(0);
@@ -38,8 +38,8 @@ public class ConsoleInterfaceHandler {
             }
 
             Integer choice = scanIntegerFromInput();
+            validateUserInput(choice + 1,  sections.size() - 1, "Wybrałeś sekcję która nie istnieje!");
             ArticleSection sectionChoice = sections.get(choice - 1);
-            //Runtime.getRuntime().exec("cls");
             clearScreen();
 
             int articleCounter = 1;
@@ -50,24 +50,24 @@ public class ConsoleInterfaceHandler {
 
             System.out.println("Wybierz artykuł z listy");
             Integer articleChoice = scanIntegerFromInput();
+            validateUserInput(articleChoice+1, sectionChoice.getArcticleHeaders().size()+1, "Wybrałeś artykuł który nie istnieje!");
+
             String articleUrlChoice = sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
             InteriaArticle article = interiaClient.getInteriaArticle(articleUrlChoice);
-//            Runtime.getRuntime().exec("cls");
+
             clearScreen();
             System.out.println(article.getContent());
 
-            System.out.println("");
             shouldExitOrRerun();
 
         } catch (IOException e) {
             System.out.println("Wystąpił problem z wyświetleniem wybranej treści, spróbuj ponownie\n");
-            initializeCLI();
-        }catch (IndexOutOfBoundsException e){
-            System.out.println("Wybrałeś artykuł który nie istnieje, spróbuj ponownie\n");
-            initializeCLI();
+            runCLI();
+        }catch (UserInputException e){
+            runCLI();
         }
     }
-    public static void clearScreen() {
+    private static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
@@ -76,9 +76,9 @@ public class ConsoleInterfaceHandler {
         System.out.println("Aby zakończyć wpisz \"X\", aby wrócić do wyboru treści wpisz \"R\"");
         String whatNextChoice = scanner.nextLine();
         if(whatNextChoice.equals("R") || whatNextChoice.equals("r")){
-            initializeCLI();
+            runCLI();
         }else if (whatNextChoice.equals("X") || whatNextChoice.equals("x")){
-            return;
+            System.exit(0);
         } else{
             shouldExitOrRerun();
         }
@@ -93,5 +93,15 @@ public class ConsoleInterfaceHandler {
             return scanIntegerFromInput();
         }
     }
+
+
+    private void validateUserInput(int userChoice, int max, String errorMessage) throws UserInputException {
+        if(userChoice > max || userChoice < 1){
+            System.out.println(errorMessage);
+            throw new UserInputException(errorMessage);
+        }
+    }
+
+
 
 }

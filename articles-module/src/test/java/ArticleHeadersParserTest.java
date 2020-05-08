@@ -13,11 +13,11 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class ArticleHeadersParserTest {
+class ArticleHeadersParserTest {
     private final ArticleHeadersParser parser = new ArticleHeadersParser();
 
     @Test
-    public void shouldParseSection() throws IOException {
+    void shouldParseSection() throws IOException {
         File input = new File("src/test/resources/section_mock.html");
         Document doc = Jsoup.parse(input, "UTF-8");
         Element sectionElement = doc.getElementById("facts");
@@ -33,7 +33,7 @@ public class ArticleHeadersParserTest {
     }
 
     @Test
-    public void shouldParseWholeDocument() throws IOException {
+    void shouldParseWholeDocument() throws IOException {
         File input = new File("src/test/resources/page_mock.html");
         Document doc = Jsoup.parse(input, "UTF-8");
 

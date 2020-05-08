@@ -9,6 +9,6 @@ public class Application {
 
     public static void main(String[] args) {
         ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler(new ArticleHeadersParser(), new InteriaArticleClient());
-        delegate.initializeCLI();
+        delegate.runCLI();
     }
 }
