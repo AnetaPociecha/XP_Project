@@ -1,4 +1,4 @@
-package datamodel;
+package com.agh.technology.xp.project.webscraper.articles.datamodel;
 
 public class ArticleHeader {
     private final String title;

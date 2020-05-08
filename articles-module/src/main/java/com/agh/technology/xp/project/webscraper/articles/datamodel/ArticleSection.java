@@ -1,6 +1,5 @@
-package datamodel;
+package com.agh.technology.xp.project.webscraper.articles.datamodel;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,5 +20,13 @@ public class ArticleSection {
     }
     public List<String> getTitles(){
         return arcticleHeaders.stream().map(ArticleHeader::getTitle).collect(Collectors.toList());
+    }
+
+    @Override
+    public String toString() {
+        return "ArticleSection{" +
+                "sectionName='" + sectionName + '\'' +
+                ", arcticleHeaders=" + arcticleHeaders +
+                '}';
     }
 }

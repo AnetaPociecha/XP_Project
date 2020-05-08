@@ -1,6 +1,5 @@
-package datamodel;
+package com.agh.technology.xp.project.webscraper.articles.datamodel;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,4 +24,10 @@ public class ArticleContainer {
         return sections.stream().flatMap(section -> section.getTitles().stream()).collect(Collectors.toList());
     }
 
+    @Override
+    public String toString() {
+        return "ArticleContainer{" +
+                "sections=" + sections +
+                '}';
+    }
 }

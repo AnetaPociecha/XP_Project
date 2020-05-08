@@ -6,7 +6,6 @@
     <packaging>pom</packaging>
     <version>1</version>
     <modules>
-        <module>test-module</module>
         <module>articles-module</module>
     </modules>
 
@@ -34,5 +33,10 @@
             <version>1.13.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.agh.technology.xp.project.webscraper.articles</groupId>
+            <artifactId>articles-module</artifactId>
+            <version>1</version>
+        </dependency>
     </dependencies>
 </project>

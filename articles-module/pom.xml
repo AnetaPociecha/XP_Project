@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.agh.technology.xp.project.webscraper.articles</groupId>
     <artifactId>articles-module</artifactId>
     <build>
         <plugins>
