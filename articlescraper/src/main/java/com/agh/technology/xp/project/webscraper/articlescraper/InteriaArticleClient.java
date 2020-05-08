@@ -6,12 +6,22 @@ import java.io.IOException;
 
 public class InteriaArticleClient {
 
-    public InteriaArticle downloadAndParseArticle(String articleUrl) throws HttpRequestException {
-        HttpClient client = new HttpClient();
+    private IHttpClient httpClient;
+    private InteriaArticleParser parser;
 
+    public InteriaArticleClient() {
+        httpClient = new HttpClient();
+        parser = new InteriaArticleParser();
+    }
+
+    public InteriaArticleClient(IHttpClient httpClient) {
+        this.httpClient = httpClient;
+        parser = new InteriaArticleParser();
+    }
+
+    public InteriaArticle getInteriaArticle(String articleUrl) throws HttpRequestException {
         try {
-            Document articleDocument = client.getDocument(articleUrl);
-            InteriaArticleParser parser = new InteriaArticleParser();
+            Document articleDocument = httpClient.getDocument(articleUrl);
             return parser.parse(articleDocument);
         } catch (IOException e) {
             throw new HttpRequestException(e.getMessage());

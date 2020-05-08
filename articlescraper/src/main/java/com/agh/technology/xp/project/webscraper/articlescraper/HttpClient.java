@@ -5,7 +5,7 @@ import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 
-public class HttpClient {
+public class HttpClient implements IHttpClient{
      public Document getDocument(String url) throws IOException {
           return Jsoup.connect(url).get();
      }
