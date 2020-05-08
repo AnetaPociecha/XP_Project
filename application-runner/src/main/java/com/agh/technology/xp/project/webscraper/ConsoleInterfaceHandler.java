@@ -51,7 +51,7 @@ public class ConsoleInterfaceHandler {
             System.out.println("Wybierz artykuł z listy");
             Integer articleChoice = scanIntegerFromInput();
             String articleUrlChoice = sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
-            InteriaArticle article = interiaClient.downloadAndParseArticle(articleUrlChoice);
+            InteriaArticle article = interiaClient.getInteriaArticle(articleUrlChoice);
 //            Runtime.getRuntime().exec("cls");
             clearScreen();
             System.out.println(article.getContent());
