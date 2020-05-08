@@ -13,9 +13,9 @@ public class InteriaArticleParser {
 
         Elements articleBody = document.getElementsByAttributeValue("itemprop", "articleBody");
         List<Element> paragraphs = articleBody.select("p");
-        List<Element> paragraphsContentElementList = paragraphs.subList(2,paragraphs.size());
+        paragraphs.remove(1);
 
-        List<String> paragraphsContentStringList = paragraphsContentElementList.stream().map(Element::text).collect(Collectors.toList());
+        List<String> paragraphsContentStringList = paragraphs.stream().map(Element::text).collect(Collectors.toList());
 
         return new InteriaArticle(title, String.join("\n", paragraphsContentStringList));
     }
