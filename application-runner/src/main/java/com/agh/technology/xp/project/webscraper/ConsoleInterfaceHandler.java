@@ -1,6 +1,7 @@
 package com.agh.technology.xp.project.webscraper;
 
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
+import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleHeader;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSection;
 import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParser;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticle;
@@ -24,27 +25,73 @@ public class ConsoleInterfaceHandler {
 
     void initializeCLI() {
         try {
+            clearScreen();
             this.container = parser.fetchAndParse("https://www.interia.pl/");
             System.out.println("Wybierz sekcję, której artykuły chcesz przeglądać:");
             List<ArticleSection> sections = container.getAllSections();
-            sections.forEach(articleSection -> {
-                System.out.println(String.format("%s", articleSection.getName()));
-            });
-            String choice = scanner.nextLine();
-            ArticleSection sectionChoice = sections.get(Integer.parseInt(choice));
-            Runtime.getRuntime().exec("clear");
-            sectionChoice.getArcticleHeaders().forEach(header -> {
-                System.out.println(String.format("%s", header.getTitle()));
-            });
+            sections.remove(0);
+
+            int sectionCounter = 1;
+            for(ArticleSection articleSection : sections){
+                System.out.println(sectionCounter + ". " + String.format("%s", articleSection.getName()));
+                sectionCounter += 1;
+            }
+
+            Integer choice = scanIntegerFromInput();
+            ArticleSection sectionChoice = sections.get(choice - 1);
+            //Runtime.getRuntime().exec("cls");
+            clearScreen();
+
+            int articleCounter = 1;
+            for(ArticleHeader header : sectionChoice.getArcticleHeaders()){
+                System.out.println(articleCounter+ ". " +String.format("%s", header.getTitle()));
+                articleCounter += 1;
+            }
+
             System.out.println("Wybierz artykuł z listy");
-            String articleChoice = scanner.nextLine();
-            String articleUrlChoice = sectionChoice.getArcticleHeaders().get(Integer.parseInt(articleChoice)).getUrl();
+            Integer articleChoice = scanIntegerFromInput();
+            String articleUrlChoice = sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
             InteriaArticle article = interiaClient.downloadAndParseArticle(articleUrlChoice);
-            Runtime.getRuntime().exec("clear");
+//            Runtime.getRuntime().exec("cls");
+            clearScreen();
             System.out.println(article.getContent());
 
+            System.out.println("");
+            shouldExitOrRerun();
+
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Wystąpił problem z wyświetleniem wybranej treści, spróbuj ponownie\n");
+            initializeCLI();
+        }catch (IndexOutOfBoundsException e){
+            System.out.println("Wybrałeś artykuł który nie istnieje, spróbuj ponownie\n");
+            initializeCLI();
         }
     }
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    private void shouldExitOrRerun(){
+        System.out.println("Aby zakończyć wpisz \"X\", aby wrócić do wyboru treści wpisz \"R\"");
+        String whatNextChoice = scanner.nextLine();
+        if(whatNextChoice.equals("R") || whatNextChoice.equals("r")){
+            initializeCLI();
+        }else if (whatNextChoice.equals("X") || whatNextChoice.equals("x")){
+            return;
+        } else{
+            shouldExitOrRerun();
+        }
+    }
+
+    private Integer scanIntegerFromInput(){
+        try{
+            String scannedInput = scanner.nextLine();
+            return Integer.parseInt(scannedInput);
+        } catch (NumberFormatException e){
+            System.out.println("Wpisana wartość nie jest liczbą, spróbuj ponownie");
+            return scanIntegerFromInput();
+        }
+    }
+
 }
