@@ -9,8 +9,22 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.agh.technology.xp.project.webscraper.articlescraper</groupId>
-    <artifactId>articlescraper</artifactId>
+    <groupId>com.agh.technology.xp.project.webscraper.runner</groupId>
+    <artifactId>application-runner</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.agh.technology.xp.project.webscraper.articles</groupId>
+            <artifactId>articles-module</artifactId>
+            <version>1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.agh.technology.xp.project.webscraper.articlescraper</groupId>
+            <artifactId>articlescraper</artifactId>
+            <version>1</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -24,18 +38,4 @@
         </plugins>
     </build>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.13.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.6.2</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
 </project>

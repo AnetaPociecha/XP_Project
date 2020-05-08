@@ -22,6 +22,10 @@ public class ArticleSection {
         return arcticleHeaders.stream().map(ArticleHeader::getTitle).collect(Collectors.toList());
     }
 
+    public List<ArticleHeader> getArcticleHeaders() {
+        return arcticleHeaders;
+    }
+
     @Override
     public String toString() {
         return "ArticleSection{" +

@@ -1,8 +1,8 @@
 package com.agh.technology.xp.project.webscraper.articles.parser;
 
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
-import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleHeader;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSection;
+import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleHeader;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

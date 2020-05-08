@@ -4,5 +4,5 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="delegate" class="com.agh.technology.xp.project.webscraper.ApplicationDelegate" />
+    <bean id="delegate" class="com.agh.technology.xp.project.webscraper.ConsoleInterfaceHandler" />
 </beans>
