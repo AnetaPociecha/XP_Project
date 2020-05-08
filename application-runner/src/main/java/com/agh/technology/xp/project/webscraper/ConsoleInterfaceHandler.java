@@ -38,7 +38,7 @@ public class ConsoleInterfaceHandler {
             }
 
             Integer choice = scanIntegerFromInput();
-            validateUserInput(choice + 1,  sections.size() - 1, "Wybrałeś sekcję która nie istnieje!");
+            validateUserInput(choice + 1,  sections.size() + 1, "Wybrałeś sekcję która nie istnieje!");
             ArticleSection sectionChoice = sections.get(choice - 1);
             clearScreen();
 
