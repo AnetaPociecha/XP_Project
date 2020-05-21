@@ -8,6 +8,8 @@ import com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsCli
 import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleParser;
 import com.agh.technology.xp.project.webscraper.config.ConfigReader;
+import com.agh.technology.xp.project.webscraper.io.CLIPrinter;
+import com.agh.technology.xp.project.webscraper.io.CLIScanner;
 import com.agh.technology.xp.project.webscraper.validate.UrlValidatorFacade;
 
 public class Application {
@@ -28,7 +30,9 @@ public class Application {
                         .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
                         .targetUrl(resourceUrl)
                         .build(),
-                new ArticleDetailsClient(new HttpClient(), new InteriaArticleParser()));
+                new ArticleDetailsClient(new HttpClient(), new InteriaArticleParser()),
+                new CLIPrinter(),
+                new CLIScanner());
         delegate.runCLI();
     }
 }
