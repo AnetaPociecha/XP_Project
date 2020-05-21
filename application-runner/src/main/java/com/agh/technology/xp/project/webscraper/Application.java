@@ -3,8 +3,10 @@ package com.agh.technology.xp.project.webscraper;
 
 import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParserImpl;
 import com.agh.technology.xp.project.webscraper.articles.parser.HttpClientImpl;
+import com.agh.technology.xp.project.webscraper.articlescraper.HttpClient;
+import com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient;
 import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
-import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleDetailsClient;
+import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleParser;
 import com.agh.technology.xp.project.webscraper.config.ConfigReader;
 import com.agh.technology.xp.project.webscraper.validate.UrlValidatorFacade;
 
@@ -26,7 +28,7 @@ public class Application {
                         .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
                         .targetUrl(resourceUrl)
                         .build(),
-                new InteriaArticleDetailsClient());
+                new ArticleDetailsClient(new HttpClient(), new InteriaArticleParser()));
         delegate.runCLI();
     }
 }

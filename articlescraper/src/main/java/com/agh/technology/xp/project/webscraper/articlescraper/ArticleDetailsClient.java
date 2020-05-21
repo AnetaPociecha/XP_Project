@@ -4,22 +4,18 @@ import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 
-public class InteriaArticleDetailsClient {
+public class ArticleDetailsClient {
 
     private IHttpClient httpClient;
-    private InteriaArticleParser parser;
 
-    public InteriaArticleDetailsClient() {
-        httpClient = new HttpClient();
-        parser = new InteriaArticleParser();
-    }
+    private IArticleParser parser;
 
-    public InteriaArticleDetailsClient(IHttpClient httpClient) {
+    public ArticleDetailsClient(IHttpClient httpClient, IArticleParser parser) {
         this.httpClient = httpClient;
-        parser = new InteriaArticleParser();
+        this.parser = parser;
     }
 
-    public InteriaArticle getInteriaArticle(String articleUrl) throws HttpRequestException {
+    public IArticle getInteriaArticle(String articleUrl) throws HttpRequestException {
         try {
             Document articleDocument = httpClient.getDocument(articleUrl);
             return parser.parse(articleDocument);

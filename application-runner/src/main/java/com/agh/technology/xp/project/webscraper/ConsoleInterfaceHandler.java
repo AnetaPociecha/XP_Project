@@ -3,9 +3,9 @@ package com.agh.technology.xp.project.webscraper;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleHeader;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSection;
+import com.agh.technology.xp.project.webscraper.articlescraper.IArticle;
+import com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient;
 import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
-import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticle;
-import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleDetailsClient;
 import com.agh.technology.xp.project.webscraper.exception.UserInputException;
 
 import java.io.IOException;
@@ -16,12 +16,12 @@ public class ConsoleInterfaceHandler {
 
     private static Scanner scanner = new Scanner(System.in);
     private InteriaArticlesListClient interiaArticlesListClient;
-    private InteriaArticleDetailsClient interiaArticleDetailsClient;
+    private ArticleDetailsClient articleDetailsClient;
     private String targetUrl;
 
-    ConsoleInterfaceHandler(InteriaArticlesListClient parser, InteriaArticleDetailsClient interiaClient) {
+    ConsoleInterfaceHandler(InteriaArticlesListClient parser, ArticleDetailsClient articleDetailsClient) {
         this.interiaArticlesListClient = parser;
-        this.interiaArticleDetailsClient = interiaClient;
+        this.articleDetailsClient = articleDetailsClient;
     }
 
     void runCLI() {
@@ -54,7 +54,7 @@ public class ConsoleInterfaceHandler {
             validateUserInput(articleChoice+1, sectionChoice.getArcticleHeaders().size()+1, "Wybrałeś artykuł który nie istnieje!");
 
             String articleUrlChoice = sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
-            InteriaArticle article = interiaArticleDetailsClient.getInteriaArticle(articleUrlChoice);
+            IArticle article = articleDetailsClient.getInteriaArticle(articleUrlChoice);
 
             clearScreen();
             System.out.println(article.getContent());
