@@ -9,12 +9,8 @@ public class InteriaArticlesListClient {
     private HttpClient httpClient;
     private ArticleHeadersParser articleHeadersParser;
 
-    public InteriaArticlesListClient(){
-        this.httpClient = new HttpClientImpl();
-        this.articleHeadersParser = new ArticleHeadersParserImpl();
-    }
 
-    public InteriaArticlesListClient(HttpClient httpClient, ArticleHeadersParser articleHeadersParser) {
+    private InteriaArticlesListClient(HttpClient httpClient, ArticleHeadersParser articleHeadersParser) {
         this.httpClient = httpClient;
         this.articleHeadersParser = articleHeadersParser;
     }
@@ -24,4 +20,23 @@ public class InteriaArticlesListClient {
         return articleHeadersParser.parseDocument(doc);
     }
 
+
+    public static class InteriaArticlesListClientBuilder{
+        private HttpClient httpClient;
+        private ArticleHeadersParser articleHeadersParser;
+
+        public InteriaArticlesListClientBuilder httpClient(HttpClient httpClient){
+            this.httpClient = httpClient;
+            return this;
+        }
+
+        public InteriaArticlesListClientBuilder articleHeadersParser(ArticleHeadersParser articleHeadersParser){
+            this.articleHeadersParser = articleHeadersParser;
+            return this;
+        }
+
+        public InteriaArticlesListClient build(){
+            return new InteriaArticlesListClient(this.httpClient, this.articleHeadersParser);
+        }
+    }
 }
