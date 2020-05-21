@@ -26,7 +26,7 @@ public class ConsoleInterfaceHandler {
     void runCLI() {
         try {
             clearScreen();
-            ArticleContainer container = interiaArticlesListClient.fetchAndParse("https://www.interia.pl/");
+            ArticleContainer container = interiaArticleClient.fetchAndParse();
             System.out.println("Wybierz sekcję, której artykuły chcesz przeglądać:");
             List<ArticleSection> sections = container.getAllSections();
             sections.remove(0);
