@@ -1,0 +1,34 @@
+<project>
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.agh.technology.xp.project.webscraper</groupId>
+    <artifactId>webscraper</artifactId>
+    <packaging>pom</packaging>
+    <version>1</version>
+    <modules>
+        <module>articles-module</module>
+        <module>articlescraper</module>
+        <module>application-runner</module>
+    </modules>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.2.6.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.13.1</version>
+        </dependency>
+    </dependencies>
+</project>
