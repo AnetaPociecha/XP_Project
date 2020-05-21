@@ -1,7 +1,7 @@
 package com.agh.technology.xp.project.webscraper;
 
 
-import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticleClient;
+import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleDetailsClient;
 import com.agh.technology.xp.project.webscraper.config.ConfigReader;
 
@@ -13,7 +13,7 @@ public class Application {
 
         String resourceUrl = configReader.readConfigFile().createUrl();
         configReader.readConfigFile();
-        ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler(new InteriaArticleClient(), new InteriaArticleDetailsClient());
+        ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler(new InteriaArticlesListClient(), new InteriaArticleDetailsClient());
         delegate.runCLI();
     }
 }

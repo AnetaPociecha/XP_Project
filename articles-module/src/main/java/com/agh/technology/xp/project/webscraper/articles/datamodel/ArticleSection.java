@@ -12,14 +12,12 @@ public class ArticleSection {
         this.arcticleHeaders = arcticleHeaders;
     }
 
-    public void addHeader(ArticleHeader header){
-        this.arcticleHeaders.add(header);
-    }
-    public String getName(){
-        return this.sectionName;
-    }
     public List<String> getTitles(){
         return arcticleHeaders.stream().map(ArticleHeader::getTitle).collect(Collectors.toList());
+    }
+
+    public String getName(){
+        return this.sectionName;
     }
 
     public List<ArticleHeader> getArcticleHeaders() {

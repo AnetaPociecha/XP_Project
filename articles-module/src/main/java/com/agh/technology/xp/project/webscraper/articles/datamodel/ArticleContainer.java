@@ -11,11 +11,6 @@ public class ArticleContainer {
         this.sections = sections;
     }
 
-
-    public void addSection(ArticleSection section) {
-        sections.add(section);
-    }
-
     public List<ArticleSection> getAllSections() {
         return sections;
     }
