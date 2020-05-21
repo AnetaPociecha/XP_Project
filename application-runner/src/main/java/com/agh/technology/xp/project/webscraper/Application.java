@@ -1,23 +1,34 @@
 package com.agh.technology.xp.project.webscraper;
 
 
-import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticleClient;
+import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParserImpl;
+import com.agh.technology.xp.project.webscraper.articles.parser.HttpClientImpl;
 import com.agh.technology.xp.project.webscraper.articlescraper.HttpClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient;
+import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleParser;
 import com.agh.technology.xp.project.webscraper.config.ConfigReader;
+import com.agh.technology.xp.project.webscraper.validate.UrlValidatorFacade;
 
 public class Application {
 
+    private static final String DEFAULT_TARGET_URL = "https://www.interia.pl";
 
     public static void main(String[] args) {
         ConfigReader configReader = new ConfigReader();
 
         String resourceUrl = configReader.readConfigFile().createUrl();
-        configReader.readConfigFile();
-        InteriaArticleParser articleParser = new InteriaArticleParser();
-        HttpClient client = new HttpClient();
-        ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler(new InteriaArticleClient(), new ArticleDetailsClient(client, articleParser));
+        if (!UrlValidatorFacade.isValid(resourceUrl)) {
+            resourceUrl = DEFAULT_TARGET_URL;
+        }
+
+        ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler(
+                new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
+                        .httpClient(new HttpClientImpl())
+                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
+                        .targetUrl(resourceUrl)
+                        .build(),
+                new ArticleDetailsClient(new HttpClient(), new InteriaArticleParser()));
         delegate.runCLI();
     }
 }

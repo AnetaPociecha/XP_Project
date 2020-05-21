@@ -4,8 +4,5 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
-
-    <bean id="parser" class="com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient" />
-
+    <bean id="delegate" class="com.agh.technology.xp.project.webscraper.ConsoleInterfaceHandler" />
 </beans>

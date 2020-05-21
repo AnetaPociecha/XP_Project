@@ -1,7 +1,7 @@
 
+import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParserImpl;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSection;
-import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticleClient;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ArticleHeadersParserTest {
-    private final InteriaArticleClient parser = new InteriaArticleClient();
+    private final ArticleHeadersParserImpl parser = new ArticleHeadersParserImpl("");
 
     @Test
     void shouldParseSection() throws IOException {

@@ -2,7 +2,6 @@ package com.agh.technology.xp.project.webscraper.articles.datamodel;
 
 public class ArticleHeader {
     private final String title;
-
     private final String url;
 
     public ArticleHeader(String title, String url) {

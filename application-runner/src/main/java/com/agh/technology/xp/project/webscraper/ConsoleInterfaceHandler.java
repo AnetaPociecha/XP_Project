@@ -3,9 +3,9 @@ package com.agh.technology.xp.project.webscraper;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleHeader;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSection;
-import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticleClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.IArticle;
 import com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient;
+import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
 import com.agh.technology.xp.project.webscraper.exception.UserInputException;
 
 import java.io.IOException;
@@ -15,18 +15,19 @@ import java.util.Scanner;
 public class ConsoleInterfaceHandler {
 
     private static Scanner scanner = new Scanner(System.in);
-    private InteriaArticleClient interiaArticleClient;
+    private InteriaArticlesListClient interiaArticlesListClient;
     private ArticleDetailsClient articleDetailsClient;
+    private String targetUrl;
 
-    ConsoleInterfaceHandler(InteriaArticleClient parser, ArticleDetailsClient interiaClient) {
-        this.interiaArticleClient = parser;
-        this.articleDetailsClient = interiaClient;
+    ConsoleInterfaceHandler(InteriaArticlesListClient parser, ArticleDetailsClient articleDetailsClient) {
+        this.interiaArticlesListClient = parser;
+        this.articleDetailsClient = articleDetailsClient;
     }
 
     void runCLI() {
         try {
             clearScreen();
-            ArticleContainer container = interiaArticleClient.fetchAndParse("https://www.interia.pl/");
+            ArticleContainer container = interiaArticlesListClient.fetchAndParse();
             System.out.println("Wybierz sekcję, której artykuły chcesz przeglądać:");
             List<ArticleSection> sections = container.getAllSections();
             sections.remove(0);
