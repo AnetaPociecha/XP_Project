@@ -4,8 +4,8 @@ import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContai
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleHeader;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSection;
 import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticleClient;
-import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticle;
-import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleDetailsClient;
+import com.agh.technology.xp.project.webscraper.articlescraper.IArticle;
+import com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient;
 import com.agh.technology.xp.project.webscraper.exception.UserInputException;
 
 import java.io.IOException;
@@ -16,11 +16,11 @@ public class ConsoleInterfaceHandler {
 
     private static Scanner scanner = new Scanner(System.in);
     private InteriaArticleClient interiaArticleClient;
-    private InteriaArticleDetailsClient interiaArticleDetailsClient;
+    private ArticleDetailsClient articleDetailsClient;
 
-    ConsoleInterfaceHandler(InteriaArticleClient parser, InteriaArticleDetailsClient interiaClient) {
+    ConsoleInterfaceHandler(InteriaArticleClient parser, ArticleDetailsClient interiaClient) {
         this.interiaArticleClient = parser;
-        this.interiaArticleDetailsClient = interiaClient;
+        this.articleDetailsClient = interiaClient;
     }
 
     void runCLI() {
@@ -53,7 +53,7 @@ public class ConsoleInterfaceHandler {
             validateUserInput(articleChoice+1, sectionChoice.getArcticleHeaders().size()+1, "Wybrałeś artykuł który nie istnieje!");
 
             String articleUrlChoice = sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
-            InteriaArticle article = interiaArticleDetailsClient.getInteriaArticle(articleUrlChoice);
+            IArticle article = articleDetailsClient.getInteriaArticle(articleUrlChoice);
 
             clearScreen();
             System.out.println(article.getContent());

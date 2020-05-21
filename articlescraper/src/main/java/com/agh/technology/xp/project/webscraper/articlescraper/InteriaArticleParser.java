@@ -7,7 +7,7 @@ import org.jsoup.select.Elements;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class InteriaArticleParser {
+public class InteriaArticleParser implements IArticleParser {
     public InteriaArticle parse(Document document){
 
         String title = parseHeadline(document);
@@ -18,7 +18,7 @@ public class InteriaArticleParser {
 
         return new InteriaArticle(title, String.join("\n", paragraphsContentStringList));
     }
-    
+
     private String parseHeadline(Document document) {
         Elements titleElements = document.getElementsByAttributeValue("itemprop", "name headline");
         return titleElements.text();
@@ -30,5 +30,5 @@ public class InteriaArticleParser {
         paragraphs.remove(1);
         return paragraphs;
     }
-    
+
 }

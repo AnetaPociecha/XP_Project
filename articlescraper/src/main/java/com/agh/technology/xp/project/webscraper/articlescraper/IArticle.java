@@ -1,7 +1,7 @@
 package com.agh.technology.xp.project.webscraper.articlescraper;
 
 public interface IArticle {
-    public String getTitle();
+    String getTitle();
 
-    public String getContent();
+    String getContent();
 }
