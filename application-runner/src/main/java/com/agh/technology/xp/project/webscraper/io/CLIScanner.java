@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class CLIScanner implements IScanner {
     private static final Scanner scanner = new Scanner(System.in);
 
-
     @Override
     public Integer scanIntegerFromInput(){
         try{

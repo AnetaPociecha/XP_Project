@@ -24,15 +24,17 @@ public class Application {
             resourceUrl = DEFAULT_TARGET_URL;
         }
 
-        ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler(
-                new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
-                        .httpClient(new HttpClientImpl())
-                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
-                        .targetUrl(resourceUrl)
-                        .build(),
-                new ArticleDetailsClient(new HttpClient(), new InteriaArticleParser()),
-                new CLIPrinter(),
-                new CLIScanner());
+        ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler.ConsoleInterfaceHandlerBuilder()
+                .parser(new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
+                    .httpClient(new HttpClientImpl())
+                    .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
+                    .targetUrl(resourceUrl)
+                    .build())
+                .articleDetailsClient(
+                        new ArticleDetailsClient(new HttpClient(), new InteriaArticleParser()))
+                .printer(new CLIPrinter())
+                .scanner(new CLIScanner())
+                .build();
         delegate.runCLI();
     }
 }

@@ -9,9 +9,11 @@ import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesL
 import com.agh.technology.xp.project.webscraper.exception.UserInputException;
 import com.agh.technology.xp.project.webscraper.io.IPrinter;
 import com.agh.technology.xp.project.webscraper.io.IScanner;
+import com.agh.technology.xp.project.webscraper.validate.UserInputValidator;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class ConsoleInterfaceHandler {
 
@@ -19,8 +21,9 @@ public class ConsoleInterfaceHandler {
     private final IScanner scanner;
     private final InteriaArticlesListClient interiaArticlesListClient;
     private final ArticleDetailsClient articleDetailsClient;
+    private final UserInputValidator userInputValidator = new UserInputValidator();
 
-    ConsoleInterfaceHandler(InteriaArticlesListClient parser, ArticleDetailsClient articleDetailsClient, IPrinter printer, IScanner scanner) {
+    private ConsoleInterfaceHandler(InteriaArticlesListClient parser, ArticleDetailsClient articleDetailsClient, IPrinter printer, IScanner scanner) {
         this.interiaArticlesListClient = parser;
         this.articleDetailsClient = articleDetailsClient;
         this.printer = printer;
@@ -49,20 +52,20 @@ public class ConsoleInterfaceHandler {
             printer.print("Wystąpił problem z wyświetleniem wybranej treści, spróbuj ponownie\n");
             runCLI();
         }catch (UserInputException e){
+            printer.print(e.getMessage());
             runCLI();
         }
     }
 
     private String selectArticle(ArticleSection sectionChoice) throws UserInputException {
-        int articleCounter = 1;
-        for(ArticleHeader header : sectionChoice.getArcticleHeaders()){
-            printer.print(articleCounter+ ". " +String.format("%s", header.getTitle()));
-            articleCounter += 1;
-        }
+        List<ArticleHeader> articleHeaders = sectionChoice.getArcticleHeaders();
+        IntStream.range(0, articleHeaders.size()).forEach(
+                articleCounter -> printer.print(articleCounter+1+ ". " +String.format("%s", articleHeaders.get(articleCounter).getTitle()))
+        );
 
         printer.print("Wybierz artykuł z listy");
         Integer articleChoice = scanner.scanIntegerFromInput();
-        validateUserInput(articleChoice+1, sectionChoice.getArcticleHeaders().size()+1, "Wybrałeś artykuł który nie istnieje!");
+        userInputValidator.validate(articleChoice+1, sectionChoice.getArcticleHeaders().size()+1, "Wybrałeś artykuł który nie istnieje!");
 
         return sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
     }
@@ -70,14 +73,12 @@ public class ConsoleInterfaceHandler {
     private Integer selectSection(List<ArticleSection> sections) throws UserInputException {
         printer.print("Wybierz sekcję, której artykuły chcesz przeglądać:");
 
-        int sectionCounter = 1;
-        for(ArticleSection articleSection : sections){
-            printer.print(sectionCounter + ". " + String.format("%s", articleSection.getName()));
-            sectionCounter += 1;
-        }
+        IntStream.range(0, sections.size()).forEach(
+                sectionCounter -> printer.print(sectionCounter + 1 + ". " + String.format("%s", sections.get(sectionCounter).getName()))
+        );
 
         Integer choice = scanner.scanIntegerFromInput();
-        validateUserInput(choice + 1,  sections.size() + 1, "Wybrałeś sekcję która nie istnieje!");
+        userInputValidator.validate(choice + 1,  sections.size() + 1, "Wybrałeś sekcję która nie istnieje!");
 
         return choice - 1;
     }
@@ -97,11 +98,35 @@ public class ConsoleInterfaceHandler {
             shouldExitOrRerun();
         }
     }
-    
-    private void validateUserInput(int userChoice, int max, String errorMessage) throws UserInputException {
-        if(userChoice > max || userChoice < 1){
-            printer.print(errorMessage);
-            throw new UserInputException(errorMessage);
+
+    public static class ConsoleInterfaceHandlerBuilder {
+        private InteriaArticlesListClient parser;
+        private ArticleDetailsClient articleDetailsClient;
+        private IPrinter printer;
+        private IScanner scanner;
+
+        public ConsoleInterfaceHandlerBuilder parser(InteriaArticlesListClient parser) {
+            this.parser = parser;
+            return this;
+        }
+
+        public ConsoleInterfaceHandlerBuilder articleDetailsClient(ArticleDetailsClient articleDetailsClient) {
+            this.articleDetailsClient = articleDetailsClient;
+            return this;
+        }
+
+        public ConsoleInterfaceHandlerBuilder printer(IPrinter printer) {
+            this.printer = printer;
+            return this;
+        }
+
+        public ConsoleInterfaceHandlerBuilder scanner(IScanner scanner) {
+            this.scanner = scanner;
+            return this;
+        }
+
+        public ConsoleInterfaceHandler build() {
+            return new ConsoleInterfaceHandler(parser, articleDetailsClient, printer, scanner);
         }
     }
     
