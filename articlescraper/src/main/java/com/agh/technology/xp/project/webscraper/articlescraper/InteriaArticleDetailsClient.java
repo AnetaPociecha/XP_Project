@@ -19,6 +19,11 @@ public class InteriaArticleDetailsClient {
         parser = new InteriaArticleParser();
     }
 
+    public InteriaArticleDetailsClient(IHttpClient httpClient, InteriaArticleParser parser) {
+        this.httpClient = httpClient;
+        this.parser = parser;
+    }
+
     public InteriaArticle getInteriaArticle(String articleUrl) throws HttpRequestException {
         try {
             Document articleDocument = httpClient.getDocument(articleUrl);

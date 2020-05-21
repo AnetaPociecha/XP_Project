@@ -1,6 +1,6 @@
 package com.agh.technology.xp.project.webscraper.articlescraper;
 
-public class InteriaArticle {
+public class InteriaArticle implements IArticle {
 
     private String title;
     private String content;
