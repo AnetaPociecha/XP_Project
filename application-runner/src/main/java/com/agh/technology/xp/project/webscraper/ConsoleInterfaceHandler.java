@@ -7,74 +7,88 @@ import com.agh.technology.xp.project.webscraper.articlescraper.IArticle;
 import com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient;
 import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
 import com.agh.technology.xp.project.webscraper.exception.UserInputException;
+import com.agh.technology.xp.project.webscraper.io.IPrinter;
+import com.agh.technology.xp.project.webscraper.io.IScanner;
+import com.agh.technology.xp.project.webscraper.validate.UserInputValidator;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class ConsoleInterfaceHandler {
 
-    private static Scanner scanner = new Scanner(System.in);
-    private InteriaArticlesListClient interiaArticlesListClient;
-    private ArticleDetailsClient articleDetailsClient;
-    private String targetUrl;
+    private final IPrinter printer;
+    private final IScanner scanner;
+    private final InteriaArticlesListClient interiaArticlesListClient;
+    private final ArticleDetailsClient articleDetailsClient;
+    private final UserInputValidator userInputValidator = new UserInputValidator();
 
-    ConsoleInterfaceHandler(InteriaArticlesListClient parser, ArticleDetailsClient articleDetailsClient) {
+    private ConsoleInterfaceHandler(InteriaArticlesListClient parser, ArticleDetailsClient articleDetailsClient, IPrinter printer, IScanner scanner) {
         this.interiaArticlesListClient = parser;
         this.articleDetailsClient = articleDetailsClient;
+        this.printer = printer;
+        this.scanner = scanner;
     }
 
     void runCLI() {
         try {
-            clearScreen();
+            printer.clearScreen();
             ArticleContainer container = interiaArticlesListClient.fetchAndParse();
-            System.out.println("Wybierz sekcję, której artykuły chcesz przeglądać:");
             List<ArticleSection> sections = container.getAllSections();
-            sections.remove(0);
 
-            int sectionCounter = 1;
-            for(ArticleSection articleSection : sections){
-                System.out.println(sectionCounter + ". " + String.format("%s", articleSection.getName()));
-                sectionCounter += 1;
-            }
+            Integer choice = selectSection(sections);
+            ArticleSection sectionChoice = sections.get(choice);
+            printer.clearScreen();
 
-            Integer choice = scanIntegerFromInput();
-            validateUserInput(choice + 1,  sections.size() + 1, "Wybrałeś sekcję która nie istnieje!");
-            ArticleSection sectionChoice = sections.get(choice - 1);
-            clearScreen();
-
-            int articleCounter = 1;
-            for(ArticleHeader header : sectionChoice.getArcticleHeaders()){
-                System.out.println(articleCounter+ ". " +String.format("%s", header.getTitle()));
-                articleCounter += 1;
-            }
-
-            System.out.println("Wybierz artykuł z listy");
-            Integer articleChoice = scanIntegerFromInput();
-            validateUserInput(articleChoice+1, sectionChoice.getArcticleHeaders().size()+1, "Wybrałeś artykuł który nie istnieje!");
-
-            String articleUrlChoice = sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
+            String articleUrlChoice = selectArticle(sectionChoice);
             IArticle article = articleDetailsClient.getInteriaArticle(articleUrlChoice);
 
-            clearScreen();
-            System.out.println(article.getContent());
+            printer.clearScreen();
+            displayArticle(article);
 
             shouldExitOrRerun();
 
         } catch (IOException e) {
-            System.out.println("Wystąpił problem z wyświetleniem wybranej treści, spróbuj ponownie\n");
+            printer.print("Wystąpił problem z wyświetleniem wybranej treści, spróbuj ponownie\n");
             runCLI();
         }catch (UserInputException e){
+            printer.print(e.getMessage());
             runCLI();
         }
     }
-    private static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+
+    private String selectArticle(ArticleSection sectionChoice) throws UserInputException {
+        List<ArticleHeader> articleHeaders = sectionChoice.getArcticleHeaders();
+        IntStream.range(0, articleHeaders.size()).forEach(
+                articleCounter -> printer.print(articleCounter+1+ ". " +String.format("%s", articleHeaders.get(articleCounter).getTitle()))
+        );
+
+        printer.print("Wybierz artykuł z listy");
+        Integer articleChoice = scanner.scanIntegerFromInput();
+        userInputValidator.validate(articleChoice+1, sectionChoice.getArcticleHeaders().size()+1, "Wybrałeś artykuł który nie istnieje!");
+
+        return sectionChoice.getArcticleHeaders().get(articleChoice - 1).getUrl();
+    }
+
+    private Integer selectSection(List<ArticleSection> sections) throws UserInputException {
+        printer.print("Wybierz sekcję, której artykuły chcesz przeglądać:");
+
+        IntStream.range(0, sections.size()).forEach(
+                sectionCounter -> printer.print(sectionCounter + 1 + ". " + String.format("%s", sections.get(sectionCounter).getName()))
+        );
+
+        Integer choice = scanner.scanIntegerFromInput();
+        userInputValidator.validate(choice + 1,  sections.size() + 1, "Wybrałeś sekcję która nie istnieje!");
+
+        return choice - 1;
+    }
+
+    private void displayArticle(IArticle article) {
+        printer.print(article.getContent());
     }
 
     private void shouldExitOrRerun(){
-        System.out.println("Aby zakończyć wpisz \"X\", aby wrócić do wyboru treści wpisz \"R\"");
+        printer.print("Aby zakończyć wpisz \"X\", aby wrócić do wyboru treści wpisz \"R\"");
         String whatNextChoice = scanner.nextLine().toLowerCase();
         if(whatNextChoice.equals("r")){
             runCLI();
@@ -85,24 +99,35 @@ public class ConsoleInterfaceHandler {
         }
     }
 
-    private Integer scanIntegerFromInput(){
-        try{
-            String scannedInput = scanner.nextLine();
-            return Integer.parseInt(scannedInput);
-        } catch (NumberFormatException e){
-            System.out.println("Wpisana wartość nie jest liczbą, spróbuj ponownie");
-            return scanIntegerFromInput();
+    public static class ConsoleInterfaceHandlerBuilder {
+        private InteriaArticlesListClient parser;
+        private ArticleDetailsClient articleDetailsClient;
+        private IPrinter printer;
+        private IScanner scanner;
+
+        public ConsoleInterfaceHandlerBuilder parser(InteriaArticlesListClient parser) {
+            this.parser = parser;
+            return this;
+        }
+
+        public ConsoleInterfaceHandlerBuilder articleDetailsClient(ArticleDetailsClient articleDetailsClient) {
+            this.articleDetailsClient = articleDetailsClient;
+            return this;
+        }
+
+        public ConsoleInterfaceHandlerBuilder printer(IPrinter printer) {
+            this.printer = printer;
+            return this;
+        }
+
+        public ConsoleInterfaceHandlerBuilder scanner(IScanner scanner) {
+            this.scanner = scanner;
+            return this;
+        }
+
+        public ConsoleInterfaceHandler build() {
+            return new ConsoleInterfaceHandler(parser, articleDetailsClient, printer, scanner);
         }
     }
-
-
-    private void validateUserInput(int userChoice, int max, String errorMessage) throws UserInputException {
-        if(userChoice > max || userChoice < 1){
-            System.out.println(errorMessage);
-            throw new UserInputException(errorMessage);
-        }
-    }
-
-
-
+    
 }

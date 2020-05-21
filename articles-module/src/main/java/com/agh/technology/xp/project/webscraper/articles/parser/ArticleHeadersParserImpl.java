@@ -35,7 +35,7 @@ public class ArticleHeadersParserImpl implements ArticleHeadersParser {
 
     public ArticleSection parseSection(Element sectionElem) {
         String name = !sectionElem.select("a.header-a").isEmpty() ? sectionElem.select("a.header-a").first().attr("title") : "extra";
-        List<ArticleHeader> headers = sectionElem.select("a.news-a, a.articles-a, a.news-one-a, a.special-a, a.news-gallery-a, a.tiles-a").stream()
+        List<ArticleHeader> headers = sectionElem.select("a.news-a, a.articles-a, a.news-one-a, a.special-a, a.special-triple-a, a.news-gallery-a, a.tiles-a").stream()
                 .map(elem -> new ArticleHeader(elem.attr("title"), elem.attr("href")))
                 .collect(Collectors.toList());
 
