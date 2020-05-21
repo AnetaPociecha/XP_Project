@@ -17,6 +17,7 @@ public class ConsoleInterfaceHandler {
     private static Scanner scanner = new Scanner(System.in);
     private InteriaArticlesListClient interiaArticlesListClient;
     private InteriaArticleDetailsClient interiaArticleDetailsClient;
+    private String targetUrl;
 
     ConsoleInterfaceHandler(InteriaArticlesListClient parser, InteriaArticleDetailsClient interiaClient) {
         this.interiaArticlesListClient = parser;
@@ -26,7 +27,7 @@ public class ConsoleInterfaceHandler {
     void runCLI() {
         try {
             clearScreen();
-            ArticleContainer container = interiaArticleClient.fetchAndParse();
+            ArticleContainer container = interiaArticlesListClient.fetchAndParse();
             System.out.println("Wybierz sekcję, której artykuły chcesz przeglądać:");
             List<ArticleSection> sections = container.getAllSections();
             sections.remove(0);

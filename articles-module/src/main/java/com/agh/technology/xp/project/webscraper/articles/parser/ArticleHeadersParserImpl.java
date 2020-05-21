@@ -13,17 +13,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class InteriaArticleClient {
+public class ArticleHeadersParserImpl implements ArticleHeadersParser {
     private static final List<String> sectionsToParse = Arrays.asList("special", "facts", "business", "sport", "automotive", "technologies", "tiles");
     private String targetUrl;
 
-    public InteriaArticleClient(String targetUrl) {
+    public ArticleHeadersParserImpl(String targetUrl) {
         this.targetUrl = targetUrl;
     }
 
     public ArticleContainer fetchAndParse() throws IOException {
         Document doc = Jsoup.connect(targetUrl).get();
-
         return parseDocument(doc);
     }
 

@@ -16,17 +16,16 @@ public class Application {
         ConfigReader configReader = new ConfigReader();
 
         String resourceUrl = configReader.readConfigFile().createUrl();
-        if(!UrlValidatorFacade.isValid(resourceUrl)){
+        if (!UrlValidatorFacade.isValid(resourceUrl)) {
             resourceUrl = DEFAULT_TARGET_URL;
-            System.out.println(":)");
         }
-        configReader.readConfigFile();
+
         ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler(
                 new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
-                    .httpClient(new HttpClientImpl())
-                    .articleHeadersParser(new ArticleHeadersParserImpl())
-                    .articleUrl(resourceUrl)
-                    .build(),
+                        .httpClient(new HttpClientImpl())
+                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
+                        .targetUrl(resourceUrl)
+                        .build(),
                 new InteriaArticleDetailsClient());
         delegate.runCLI();
     }
