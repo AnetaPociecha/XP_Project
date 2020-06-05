@@ -1,0 +1,15 @@
+---
+Test
+---
+!define TEST_SYSTEM {slim}
+
+!path ./application-runner/target/classes
+
+!|import|
+|com.agh.technology.xp.project.webscraper|
+
+!|com.agh.technology.xp.project.webscraper.Calculator|
+|first|second|addition?|minus?|multiply?|divide?|
+|4   |2     |6       |2     |432432       |2.0   |
+|10   |5     |15       |5     |50       |2.0   |
+|10   |10   |20       |0     |100     |1.0   |

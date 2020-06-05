@@ -1,0 +1,13 @@
+---
+Test
+---
+!define TEST_SYSTEM {slim}
+
+!path ./articlescraper/target/articlescraper-1-jar-with-dependencies.jar
+
+!|import|
+|com.agh.technology.xp.project.webscraper.articlescraper|
+
+!|com.agh.technology.xp.project.webscraper.articlescraper.ArticleClientAcceptanceTest|
+|url|title?|
+|https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special|Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie|
