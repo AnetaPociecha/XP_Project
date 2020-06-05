@@ -5,6 +5,9 @@
     <artifactId>webscraper</artifactId>
     <packaging>pom</packaging>
     <version>1</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <modules>
         <module>articles-module</module>
         <module>articlescraper</module>
