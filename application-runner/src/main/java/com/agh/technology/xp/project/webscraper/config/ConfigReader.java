@@ -1,5 +1,6 @@
 package com.agh.technology.xp.project.webscraper.config;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -24,7 +25,8 @@ public class ConfigReader {
             port = (String) jsonObject.get("port");
 
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
+            System.out.println("Nie znaleziono pliku konfiguracyjnego. Zastosowano domyślne ustawienia");
+            return new ConfigData("www.interia.pl", "443");
         }
         return new ConfigData(host, port);
     }
