@@ -1,0 +1,13 @@
+WINDOWS:
+Uruchomienie programu odbywa się poprzez dwukrotne kliknięcie w ikonkę pliku wykonywalne (*.exe) o nazwie interiaScraper.exe
+lub uruchomieniem w konsoli poprzez komendę "start interiaScraper.exe"
+
+Linux:
+Uruchomienie skryptu odbywa się poprzez uruchomienie komedy: ".\runInteriaScraper.sh".
+W przypadku problemów z uprawnieniami: "sudo chmod +x runInteriaScraper.sh"
+
+Poprzez JVM:
+java -jar application-runner-1-jar-with-dependencies.jar
+
+Wymagana wersja javy: 1.8
+
