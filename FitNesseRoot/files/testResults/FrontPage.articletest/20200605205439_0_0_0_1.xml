@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20200501</FitNesseVersion>
+  <rootPath>FrontPage.articletest</rootPath>
+  <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>3</exceptions>
+    </counts>
+    <date>2020-06-05T20:54:40+02:00</date>
+    <runTimeInMillis>510</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: ./articlescraper/target/test-classes&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="2"&gt;ArticleClientAcceptanceTest &lt;span class="error"&gt;Could not invoke constructor for ArticleClientAcceptanceTest[0]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;url&lt;/td&gt;
+		&lt;td&gt;title?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special &lt;span class="error"&gt;The instance decisionTable_0.setUrl. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie &lt;span class="error"&gt;The instance decisionTable_0.title. does not exist&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>articletest</relativePageName>
+    <instructions>
+      <instructionResult>
+        <instruction>{id='decisionTable_0_0', instruction='make', instanceName='decisionTable_0', className='ArticleClientAcceptanceTest', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_0_0</instructionId>
+          <type>ConstructionExpectation</type>
+          <evaluationMessage>Could not invoke constructor for ArticleClientAcceptanceTest[0]</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_0_4', instruction='call', instanceName='decisionTable_0', methodName='setUrl', args=[https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_0_4</instructionId>
+          <type>VoidReturnExpectation</type>
+          <evaluationMessage>The instance decisionTable_0.setUrl. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_0_6', instruction='call', instanceName='decisionTable_0', methodName='title', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_0_6</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_0.title. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+    </instructions>
+  </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp /Users/kriczq/XP_Project/fitnesse-standalone.jar:./articlescraper/target/test-classes fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>1600</totalRunTimeInMillis>
+</testResults>
+

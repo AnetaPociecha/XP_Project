@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20200501</FitNesseVersion>
+  <rootPath>FrontPage.articletest</rootPath>
+  <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>1</exceptions>
+    </counts>
+    <date>2020-06-05T21:02:07+02:00</date>
+    <runTimeInMillis>2042</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: ./articlescraper/target/classes&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper.articlescraper&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="2"&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper.articlescraper.ArticleClientAcceptanceTest&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;url&lt;/td&gt;
+		&lt;td&gt;title?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special&lt;/td&gt;
+		&lt;td&gt;&lt;table&gt;&lt;tr class="exception closed"&gt;&lt;td&gt; &lt;span class="error"&gt;Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: org/jsoup/Jsoup
+	at com.agh.technology.xp.project.webscraper.articlescraper.HttpClient.getDocument(HttpClient.java:10) [file:/Users/kriczq/XP_Project/articlescraper/target/classes/]
+	at com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient.getInteriaArticle(ArticleDetailsClient.java:20) [file:/Users/kriczq/XP_Project/articlescraper/target/classes/]
+	at com.agh.technology.xp.project.webscraper.articlescraper.ArticleClientAcceptanceTest.title(ArticleClientAcceptanceTest.java:22) [file:/Users/kriczq/XP_Project/articlescraper/target/classes/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_221]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.callMethod(SimpleInteraction.java:307) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.invokeMethod(SimpleInteraction.java:290) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.findAndInvoke(SimpleInteraction.java:217) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-standalone.jar:20200501]
+Caused by: java.lang.ClassNotFoundException: org.jsoup.Jsoup
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:382) [rt.jar:1.8.0_221]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) [rt.jar:1.8.0_221]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:349) [rt.jar:1.8.0_221]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) [rt.jar:1.8.0_221]
+	at com.agh.technology.xp.project.webscraper.articlescraper.HttpClient.getDocument(HttpClient.java:10) [file:/Users/kriczq/XP_Project/articlescraper/target/classes/]
+	at com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient.getInteriaArticle(ArticleDetailsClient.java:20) [file:/Users/kriczq/XP_Project/articlescraper/target/classes/]
+	at com.agh.technology.xp.project.webscraper.articlescraper.ArticleClientAcceptanceTest.title(ArticleClientAcceptanceTest.java:22) [file:/Users/kriczq/XP_Project/articlescraper/target/classes/]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) [rt.jar:1.8.0_221]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) [rt.jar:1.8.0_221]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) [rt.jar:1.8.0_221]
+	at java.lang.reflect.Method.invoke(Method.java:498) [rt.jar:1.8.0_221]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.methodInvoke(SimpleInteraction.java:322) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.callMethod(SimpleInteraction.java:307) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.invokeMethod(SimpleInteraction.java:290) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.fixtureInteraction.SimpleInteraction.findAndInvoke(SimpleInteraction.java:217) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.MethodExecutor.findAndInvoke(MethodExecutor.java:18) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.FixtureMethodExecutor.execute(FixtureMethodExecutor.java:18) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.StatementExecutor.getMethodExecutionResult(StatementExecutor.java:139) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.StatementExecutor.call(StatementExecutor.java:112) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.instructions.CallAndOptionalAssignInstruction.executeInternal(CallAndOptionalAssignInstruction.java:30) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:29) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:85) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:82) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:75) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:62) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:47) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.handle(SlimService.java:169) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:177) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.accept(SlimService.java:139) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:92) [fitnesse-standalone.jar:20200501]
+	at fitnesse.slim.SlimService.main(SlimService.java:57) [fitnesse-standalone.jar:20200501]&lt;/td&lt;/tr&gt;&lt;/table&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>articletest</relativePageName>
+    <instructions>
+      <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.agh.technology.xp.project.webscraper.articlescraper'}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper.articlescraper)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>import_0_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ImportExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper.articlescraper</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='com.agh.technology.xp.project.webscraper.articlescraper.ArticleClientAcceptanceTest', args=[]}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper.articlescraper.ArticleClientAcceptanceTest)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_0</instructionId>
+          <col>0</col>
+          <row>0</row>
+          <type>ConstructionExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper.articlescraper.ArticleClientAcceptanceTest</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_4</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_6', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_6</instructionId>
+          <type>ReturnedValueExpectation</type>
+        </expectation>
+      </instructionResult>
+    </instructions>
+  </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp /Users/kriczq/XP_Project/fitnesse-standalone.jar:./articlescraper/target/classes fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>3994</totalRunTimeInMillis>
+</testResults>
+

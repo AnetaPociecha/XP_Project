@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20200501</FitNesseVersion>
+  <rootPath>FrontPage.fdsfdsfds</rootPath>
+  <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>19</exceptions>
+    </counts>
+    <date>2020-06-05T20:32:34+02:00</date>
+    <runTimeInMillis>1498</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="6"&gt;com.agh.technology.xp.project.webscraper.Calculator &lt;span class="error"&gt;Could not find class com.agh.technology.xp.project.webscraper&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;first&lt;/td&gt;
+		&lt;td&gt;second&lt;/td&gt;
+		&lt;td&gt;addition?&lt;/td&gt;
+		&lt;td&gt;minus?&lt;/td&gt;
+		&lt;td&gt;multiply?&lt;/td&gt;
+		&lt;td&gt;divide?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;4 &lt;span class="error"&gt;The instance decisionTable_1.setFirst. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2 &lt;span class="error"&gt;The instance decisionTable_1.setSecond. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;6 &lt;span class="error"&gt;The instance decisionTable_1.addition. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2 &lt;span class="error"&gt;The instance decisionTable_1.minus. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;432432 &lt;span class="error"&gt;The instance decisionTable_1.multiply. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2.0 &lt;span class="error"&gt;The instance decisionTable_1.divide. does not exist&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;10 &lt;span class="error"&gt;The instance decisionTable_1.setFirst. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;5 &lt;span class="error"&gt;The instance decisionTable_1.setSecond. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;15 &lt;span class="error"&gt;The instance decisionTable_1.addition. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;5 &lt;span class="error"&gt;The instance decisionTable_1.minus. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;50 &lt;span class="error"&gt;The instance decisionTable_1.multiply. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;2.0 &lt;span class="error"&gt;The instance decisionTable_1.divide. does not exist&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;10 &lt;span class="error"&gt;The instance decisionTable_1.setFirst. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;10 &lt;span class="error"&gt;The instance decisionTable_1.setSecond. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;20 &lt;span class="error"&gt;The instance decisionTable_1.addition. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;0 &lt;span class="error"&gt;The instance decisionTable_1.minus. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;100 &lt;span class="error"&gt;The instance decisionTable_1.multiply. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;1.0 &lt;span class="error"&gt;The instance decisionTable_1.divide. does not exist&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>fdsfdsfds</relativePageName>
+    <instructions>
+      <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.agh.technology.xp.project.webscraper'}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>import_0_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ImportExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='com.agh.technology.xp.project.webscraper.Calculator', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_0</instructionId>
+          <type>ConstructionExpectation</type>
+          <evaluationMessage>Could not find class com.agh.technology.xp.project.webscraper</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setFirst', args=[4]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_4</instructionId>
+          <type>VoidReturnExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.setFirst. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_5', instruction='call', instanceName='decisionTable_1', methodName='setSecond', args=[2]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_5</instructionId>
+          <type>VoidReturnExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.setSecond. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_7', instruction='call', instanceName='decisionTable_1', methodName='addition', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_7</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.addition. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_8', instruction='call', instanceName='decisionTable_1', methodName='minus', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_8</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.minus. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_9', instruction='call', instanceName='decisionTable_1', methodName='multiply', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_9</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.multiply. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_10', instruction='call', instanceName='decisionTable_1', methodName='divide', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_10</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.divide. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_12', instruction='call', instanceName='decisionTable_1', methodName='setFirst', args=[10]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_12</instructionId>
+          <type>VoidReturnExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.setFirst. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_13', instruction='call', instanceName='decisionTable_1', methodName='setSecond', args=[5]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_13</instructionId>
+          <type>VoidReturnExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.setSecond. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_15', instruction='call', instanceName='decisionTable_1', methodName='addition', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_15</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.addition. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_16', instruction='call', instanceName='decisionTable_1', methodName='minus', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_16</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.minus. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_17', instruction='call', instanceName='decisionTable_1', methodName='multiply', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_17</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.multiply. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_18', instruction='call', instanceName='decisionTable_1', methodName='divide', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_18</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.divide. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_20', instruction='call', instanceName='decisionTable_1', methodName='setFirst', args=[10]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_20</instructionId>
+          <type>VoidReturnExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.setFirst. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_21', instruction='call', instanceName='decisionTable_1', methodName='setSecond', args=[10]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_21</instructionId>
+          <type>VoidReturnExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.setSecond. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_23', instruction='call', instanceName='decisionTable_1', methodName='addition', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_23</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.addition. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_24', instruction='call', instanceName='decisionTable_1', methodName='minus', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_24</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.minus. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_25', instruction='call', instanceName='decisionTable_1', methodName='multiply', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_25</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.multiply. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_26', instruction='call', instanceName='decisionTable_1', methodName='divide', args=[]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <status>error</status>
+          <instructionId>decisionTable_1_26</instructionId>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>The instance decisionTable_1.divide. does not exist</evaluationMessage>
+        </expectation>
+      </instructionResult>
+    </instructions>
+  </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp /Users/kriczq/XP_Project/fitnesse-standalone.jar fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>3025</totalRunTimeInMillis>
+</testResults>
+
