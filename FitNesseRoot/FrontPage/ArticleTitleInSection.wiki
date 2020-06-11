@@ -1,0 +1,20 @@
+---
+Test
+---
+!define TEST_SYSTEM {slim}
+
+!path ./acceptance-tests/target/*.jar
+
+!3 ''Sprawdza czy sekcja zawiera podany tytuł.''
+
+!|import|
+|com.agh.technology.xp.project.webscraper|
+
+!|com.agh.technology.xp.project.webscraper.SectionAcceptanceTest|
+|sectionName|articlesList?|
+|Fakty|=~/"Tęczowe disco pod Pałacem". Prowokacja?/|
+|Biznes|=~/Unia Owocowa bije na alarm zagrożone jabłka i gruszki w całej UE/|
+|Sport|=~/Członek klubu z koronawirusem. Mecz przełożony/|
+|Moto|=~/Pasażerowie zatrzymali pijanego kierowcę autobusu/|
+|Tech|=~/Topniejąca wieczna zmarzlina to bomba zegarowa/|
+|extra|=~/"Mam talent": Christina Rae zachwyciła jurorów/|

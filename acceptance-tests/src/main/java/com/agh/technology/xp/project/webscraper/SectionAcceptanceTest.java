@@ -34,4 +34,20 @@ public class SectionAcceptanceTest {
 
         return sectionOptional.map(articleSection -> articleSection.getArcticleHeaders().size()).orElse(0);
     }
+
+    public String articlesList() throws IOException {
+        String resourceUrl = "https://www.interia.pl";
+        IArticleParser parser = new InteriaArticleParser();
+        InteriaArticlesListClient interiaArticlesListClient = new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
+                .httpClient(new HttpClientImpl())
+                .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
+                .targetUrl(resourceUrl)
+                .build();
+
+        ArticleContainer articleContainer = interiaArticlesListClient.fetchAndParse();
+
+        Optional<ArticleSection> sectionOptional = articleContainer.getAllSections().stream().filter(x -> x.getName().equals(sectionName)).findAny();
+
+        return sectionOptional.map(articleSection -> articleSection.getTitles().toString()).orElse("");
+    }
 }

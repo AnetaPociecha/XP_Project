@@ -1,5 +1,6 @@
+|FrontPage.ArticleTitleInSection||24:05:10 pt., cze 12, 2020|
+|FrontPage||24:01:01 pt., cze 12, 2020|
 |FrontPage.ArticlesNumberInSection||22:32:10 Cz, cze 11, 2020|
-|FrontPage||22:31:38 Cz, cze 11, 2020|
 |FrontPage.ArticleScraperContent||22:13:26 Cz, cze 11, 2020|
 |FrontPage.articletest||21:59:08 Cz, cze 11, 2020|
 |FrontPage.Articletest||20:53:40 Pt, cze 05, 2020|
