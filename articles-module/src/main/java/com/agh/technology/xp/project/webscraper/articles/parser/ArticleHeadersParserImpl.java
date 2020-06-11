@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ArticleHeadersParserImpl implements ArticleHeadersParser {
-    private static final List<String> sectionsToParse = Arrays.asList("special", "facts", "business", "sport", "automotive", "technologies", "tiles");
+    private static final List<String> sectionsToParse = Arrays.asList("facts", "business", "sport", "automotive", "technologies", "tiles");
     private String targetUrl;
 
     public ArticleHeadersParserImpl(String targetUrl) {
