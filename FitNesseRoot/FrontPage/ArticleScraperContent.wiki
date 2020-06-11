@@ -1,0 +1,16 @@
+---
+Test
+---
+!define TEST_SYSTEM {slim}
+
+!path ./acceptance-tests/target/*.jar
+
+!3 ''Sprawdza czy sparsowana treść artykułu zawiera dane zdania.''
+
+!|import|
+|com.agh.technology.xp.project.webscraper|
+
+!|com.agh.technology.xp.project.webscraper.ArticleClientContentAcceptanceTest|
+|url|content?|
+|https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718|=~/Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe./|
+|https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718|=~/Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci./|

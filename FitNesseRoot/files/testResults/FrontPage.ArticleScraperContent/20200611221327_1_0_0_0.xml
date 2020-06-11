@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20200501</FitNesseVersion>
+  <rootPath>FrontPage.ArticleScraperContent</rootPath>
+  <result>
+    <counts>
+      <right>2</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <date>2020-06-11T22:13:28+02:00</date>
+    <runTimeInMillis>2453</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: ./acceptance-tests/target/*.jar&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;h3 id="Sprawdzaczysparsowanatreartykuuzawieradanezdania."&gt;&lt;i&gt;Sprawdza czy sparsowana treść artykułu zawiera dane zdania.&lt;/i&gt;&lt;/h3&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="2"&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper.ArticleClientContentAcceptanceTest&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;url&lt;/td&gt;
+		&lt;td&gt;content?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;/Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe./ found in: Komendant policji słowackiej Milan Luczansky powiedział, że nożownik, który zabił w szkole w miejscowości Vrutky w powiecie Martin jedną osobę, miał wcześniej problemy, których natury nie sprecyzowano. Napastnika próbował powstrzymać jeden z nauczycieli.
+Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe.
+Zdaniem lekarzy żadna z hospitalizowanych osób nie znajduje się w stanie zagrażającym życiu. Jak powiedzieli pracownicy pogotowia ratunkowego, wszyscy przy transporcie do szpitala w Martinie byli przytomni. Najcięższe obrażenia, klatki piersiowej i brzucha, ma zaatakowana nauczycielka.
+Jedno z dzieci zostało także ugodzone w brzuch i klatkę piersiową, drugie ma obrażenia szyi. Motywy ataku młodego mężczyzny nie są znane. Policja zapewnia, że śledztwo jest prowadzone w różnych kierunkach. Luczansky powiedział, że sprawca działał sam.
+Na miejsce tragedii wysłana została specjalną grupa psychologów, którzy rozmawiali z dziećmi i ich rodzicami. Kondolencje rodzinie ofiary złożyli prezydent Zuzana Czaputova i premier Igor Matovicz.
+Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci.
+1 / 4
+Słowackie media podają różne, czasem wykluczające się wiadomości na ten temat. Według informacji portalu "Aktualnie.sk" 22-letni napastnik to były pracownik szkoły lub jej absolwent. Motywy jego postępowania nie są znane.
+Źródło: East News
+Autor: TASR/Associated Press&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;/Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci./ found in: Komendant policji słowackiej Milan Luczansky powiedział, że nożownik, który zabił w szkole w miejscowości Vrutky w powiecie Martin jedną osobę, miał wcześniej problemy, których natury nie sprecyzowano. Napastnika próbował powstrzymać jeden z nauczycieli.
+Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe.
+Zdaniem lekarzy żadna z hospitalizowanych osób nie znajduje się w stanie zagrażającym życiu. Jak powiedzieli pracownicy pogotowia ratunkowego, wszyscy przy transporcie do szpitala w Martinie byli przytomni. Najcięższe obrażenia, klatki piersiowej i brzucha, ma zaatakowana nauczycielka.
+Jedno z dzieci zostało także ugodzone w brzuch i klatkę piersiową, drugie ma obrażenia szyi. Motywy ataku młodego mężczyzny nie są znane. Policja zapewnia, że śledztwo jest prowadzone w różnych kierunkach. Luczansky powiedział, że sprawca działał sam.
+Na miejsce tragedii wysłana została specjalną grupa psychologów, którzy rozmawiali z dziećmi i ich rodzicami. Kondolencje rodzinie ofiary złożyli prezydent Zuzana Czaputova i premier Igor Matovicz.
+Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci.
+1 / 4
+Słowackie media podają różne, czasem wykluczające się wiadomości na ten temat. Według informacji portalu "Aktualnie.sk" 22-letni napastnik to były pracownik szkoły lub jej absolwent. Motywy jego postępowania nie są znane.
+Źródło: East News
+Autor: TASR/Associated Press&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>ArticleScraperContent</relativePageName>
+    <instructions>
+      <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.agh.technology.xp.project.webscraper'}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>import_0_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ImportExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='com.agh.technology.xp.project.webscraper.ArticleClientContentAcceptanceTest', args=[]}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper.ArticleClientContentAcceptanceTest)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_0</instructionId>
+          <col>0</col>
+          <row>0</row>
+          <type>ConstructionExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper.ArticleClientContentAcceptanceTest</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_4</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_6', instruction='call', instanceName='decisionTable_1', methodName='content', args=[]}</instruction>
+        <slimResult>pass(/Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe./ found in: Komendant policji słowackiej Milan Luczansky powiedział, że nożownik, który zabił w szkole w miejscowości Vrutky w powiecie Martin jedną osobę, miał wcześniej problemy, których natury nie sprecyzowano. Napastnika próbował powstrzymać jeden z nauczycieli.
+Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe.
+Zdaniem lekarzy żadna z hospitalizowanych osób nie znajduje się w stanie zagrażającym życiu. Jak powiedzieli pracownicy pogotowia ratunkowego, wszyscy przy transporcie do szpitala w Martinie byli przytomni. Najcięższe obrażenia, klatki piersiowej i brzucha, ma zaatakowana nauczycielka.
+Jedno z dzieci zostało także ugodzone w brzuch i klatkę piersiową, drugie ma obrażenia szyi. Motywy ataku młodego mężczyzny nie są znane. Policja zapewnia, że śledztwo jest prowadzone w różnych kierunkach. Luczansky powiedział, że sprawca działał sam.
+Na miejsce tragedii wysłana została specjalną grupa psychologów, którzy rozmawiali z dziećmi i ich rodzicami. Kondolencje rodzinie ofiary złożyli prezydent Zuzana Czaputova i premier Igor Matovicz.
+Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci.
+1 / 4
+Słowackie media podają różne, czasem wykluczające się wiadomości na ten temat. Według informacji portalu "Aktualnie.sk" 22-letni napastnik to były pracownik szkoły lub jej absolwent. Motywy jego postępowania nie są znane.
+Źródło: East News
+Autor: TASR/Associated Press)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_6</instructionId>
+          <col>1</col>
+          <row>2</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>/Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe./ found in: Komendant policji słowackiej Milan Luczansky powiedział, że nożownik, który zabił w szkole w miejscowości Vrutky w powiecie Martin jedną osobę, miał wcześniej problemy, których natury nie sprecyzowano. Napastnika próbował powstrzymać jeden z nauczycieli.
+Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe.
+Zdaniem lekarzy żadna z hospitalizowanych osób nie znajduje się w stanie zagrażającym życiu. Jak powiedzieli pracownicy pogotowia ratunkowego, wszyscy przy transporcie do szpitala w Martinie byli przytomni. Najcięższe obrażenia, klatki piersiowej i brzucha, ma zaatakowana nauczycielka.
+Jedno z dzieci zostało także ugodzone w brzuch i klatkę piersiową, drugie ma obrażenia szyi. Motywy ataku młodego mężczyzny nie są znane. Policja zapewnia, że śledztwo jest prowadzone w różnych kierunkach. Luczansky powiedział, że sprawca działał sam.
+Na miejsce tragedii wysłana została specjalną grupa psychologów, którzy rozmawiali z dziećmi i ich rodzicami. Kondolencje rodzinie ofiary złożyli prezydent Zuzana Czaputova i premier Igor Matovicz.
+Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci.
+1 / 4
+Słowackie media podają różne, czasem wykluczające się wiadomości na ten temat. Według informacji portalu "Aktualnie.sk" 22-letni napastnik to były pracownik szkoły lub jej absolwent. Motywy jego postępowania nie są znane.
+Źródło: East News
+Autor: TASR/Associated Press</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_8', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_8</instructionId>
+          <col>0</col>
+          <row>3</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_10', instruction='call', instanceName='decisionTable_1', methodName='content', args=[]}</instruction>
+        <slimResult>pass(/Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci./ found in: Komendant policji słowackiej Milan Luczansky powiedział, że nożownik, który zabił w szkole w miejscowości Vrutky w powiecie Martin jedną osobę, miał wcześniej problemy, których natury nie sprecyzowano. Napastnika próbował powstrzymać jeden z nauczycieli.
+Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe.
+Zdaniem lekarzy żadna z hospitalizowanych osób nie znajduje się w stanie zagrażającym życiu. Jak powiedzieli pracownicy pogotowia ratunkowego, wszyscy przy transporcie do szpitala w Martinie byli przytomni. Najcięższe obrażenia, klatki piersiowej i brzucha, ma zaatakowana nauczycielka.
+Jedno z dzieci zostało także ugodzone w brzuch i klatkę piersiową, drugie ma obrażenia szyi. Motywy ataku młodego mężczyzny nie są znane. Policja zapewnia, że śledztwo jest prowadzone w różnych kierunkach. Luczansky powiedział, że sprawca działał sam.
+Na miejsce tragedii wysłana została specjalną grupa psychologów, którzy rozmawiali z dziećmi i ich rodzicami. Kondolencje rodzinie ofiary złożyli prezydent Zuzana Czaputova i premier Igor Matovicz.
+Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci.
+1 / 4
+Słowackie media podają różne, czasem wykluczające się wiadomości na ten temat. Według informacji portalu "Aktualnie.sk" 22-letni napastnik to były pracownik szkoły lub jej absolwent. Motywy jego postępowania nie są znane.
+Źródło: East News
+Autor: TASR/Associated Press)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_10</instructionId>
+          <col>1</col>
+          <row>3</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>/Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci./ found in: Komendant policji słowackiej Milan Luczansky powiedział, że nożownik, który zabił w szkole w miejscowości Vrutky w powiecie Martin jedną osobę, miał wcześniej problemy, których natury nie sprecyzowano. Napastnika próbował powstrzymać jeden z nauczycieli.
+Luczansky przedstawił prawdopodobny przebieg tragicznego zajścia. Napastnik przemocą dostał się na teren szkoły i chciał go zatrzymać jeden z nauczycieli. Otrzymał kilka ciosów nożem, od których zmarł. 22-letni były uczeń szkoły wpadł następnie do najbliższej klasy i zadawał ciosy nożem. Ranił nauczycielkę i dwójkę dzieci. Przed funkcjonariuszami policji bronił się nożem i został zastrzelony. W szamotaninie dwóch policjantów odniosło rany postrzałowe.
+Zdaniem lekarzy żadna z hospitalizowanych osób nie znajduje się w stanie zagrażającym życiu. Jak powiedzieli pracownicy pogotowia ratunkowego, wszyscy przy transporcie do szpitala w Martinie byli przytomni. Najcięższe obrażenia, klatki piersiowej i brzucha, ma zaatakowana nauczycielka.
+Jedno z dzieci zostało także ugodzone w brzuch i klatkę piersiową, drugie ma obrażenia szyi. Motywy ataku młodego mężczyzny nie są znane. Policja zapewnia, że śledztwo jest prowadzone w różnych kierunkach. Luczansky powiedział, że sprawca działał sam.
+Na miejsce tragedii wysłana została specjalną grupa psychologów, którzy rozmawiali z dziećmi i ich rodzicami. Kondolencje rodzinie ofiary złożyli prezydent Zuzana Czaputova i premier Igor Matovicz.
+Szkoła we Vrutkach łączy przedszkole, szkołę podstawową oraz gimnazjum. Uczy się w niej około 200 dzieci.
+1 / 4
+Słowackie media podają różne, czasem wykluczające się wiadomości na ten temat. Według informacji portalu "Aktualnie.sk" 22-letni napastnik to były pracownik szkoły lub jej absolwent. Motywy jego postępowania nie są znane.
+Źródło: East News
+Autor: TASR/Associated Press</evaluationMessage>
+        </expectation>
+      </instructionResult>
+    </instructions>
+  </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp /Users/kriczq/XP_Project/fitnesse-standalone.jar:/Users/kriczq/XP_Project/./acceptance-tests/target/acceptance-tests-1-jar-with-dependencies.jar:/Users/kriczq/XP_Project/./acceptance-tests/target/acceptance-tests-1.jar fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>1</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>3459</totalRunTimeInMillis>
+</testResults>
+

@@ -1,0 +1,6 @@
+---
+Test
+---
+!define TEST_SYSTEM {slim}
+
+!pomFile pom.xml

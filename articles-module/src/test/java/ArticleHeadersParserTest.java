@@ -39,11 +39,11 @@ class ArticleHeadersParserTest {
 
         ArticleContainer articleContainer = parser.parseDocument(doc);
 
-        assertEquals(articleContainer.getAllSections().size(), 7);
+        assertEquals(articleContainer.getAllSections().size(), 6);
         assertTrue(articleContainer.getAllSections().stream().allMatch(section -> section.getTitles().size() > 0));
         assertTrue(articleContainer.getAllSections().stream().flatMap(section -> section.getArcticleHeaders().stream()).allMatch(header -> header.getUrl().startsWith("https://")));
 
-        assertEquals(articleContainer.getAllTitles().size(), 97);
+        assertEquals(articleContainer.getAllTitles().size(), 90);
 
     }
 }

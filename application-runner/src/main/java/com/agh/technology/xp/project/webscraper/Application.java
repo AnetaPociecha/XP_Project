@@ -35,6 +35,7 @@ public class Application {
                 .printer(new CLIPrinter())
                 .scanner(new CLIScanner())
                 .build();
+
         delegate.runCLI();
     }
 }

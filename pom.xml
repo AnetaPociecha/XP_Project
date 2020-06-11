@@ -12,6 +12,7 @@
         <module>articles-module</module>
         <module>articlescraper</module>
         <module>application-runner</module>
+        <module>acceptance-tests</module>
     </modules>
 
 

@@ -1,0 +1,233 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20200501</FitNesseVersion>
+  <rootPath>FrontPage.ArticlesNumberInSection</rootPath>
+  <result>
+    <counts>
+      <right>4</right>
+      <wrong>2</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <date>2020-06-11T22:31:44+02:00</date>
+    <runTimeInMillis>5899</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: ./acceptance-tests/target/*.jar&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;h3 id="Sprawdzailosparsowanychartykuwwkadejzsekcji."&gt;&lt;i&gt;Sprawdza ilość sparsowanych artykułów w każdej z sekcji.&lt;/i&gt;&lt;/h3&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="2"&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper.SectionAcceptanceTest&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;sectionName&lt;/td&gt;
+		&lt;td&gt;articlesNumber?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;Fakty&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;20&amp;gt;10&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;Biznes&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;17&amp;gt;10&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;Sport&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;19&amp;gt;10&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;Moto&lt;/td&gt;
+		&lt;td&gt;&lt;span class="fail"&gt;10&amp;gt;10&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;Tech&lt;/td&gt;
+		&lt;td&gt;&lt;span class="fail"&gt;10&amp;gt;10&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;extra&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;14&amp;gt;10&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>ArticlesNumberInSection</relativePageName>
+    <instructions>
+      <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.agh.technology.xp.project.webscraper'}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>import_0_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ImportExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='com.agh.technology.xp.project.webscraper.SectionAcceptanceTest', args=[]}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper.SectionAcceptanceTest)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_0</instructionId>
+          <col>0</col>
+          <row>0</row>
+          <type>ConstructionExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper.SectionAcceptanceTest</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setSectionName', args=[Fakty]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_4</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_6', instruction='call', instanceName='decisionTable_1', methodName='articlesNumber', args=[]}</instruction>
+        <slimResult>pass(20&gt;10)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_6</instructionId>
+          <col>1</col>
+          <row>2</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>20&gt;10</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_8', instruction='call', instanceName='decisionTable_1', methodName='setSectionName', args=[Biznes]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_8</instructionId>
+          <col>0</col>
+          <row>3</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_10', instruction='call', instanceName='decisionTable_1', methodName='articlesNumber', args=[]}</instruction>
+        <slimResult>pass(17&gt;10)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_10</instructionId>
+          <col>1</col>
+          <row>3</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>17&gt;10</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_12', instruction='call', instanceName='decisionTable_1', methodName='setSectionName', args=[Sport]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_12</instructionId>
+          <col>0</col>
+          <row>4</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_14', instruction='call', instanceName='decisionTable_1', methodName='articlesNumber', args=[]}</instruction>
+        <slimResult>pass(19&gt;10)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_14</instructionId>
+          <col>1</col>
+          <row>4</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>19&gt;10</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_16', instruction='call', instanceName='decisionTable_1', methodName='setSectionName', args=[Moto]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_16</instructionId>
+          <col>0</col>
+          <row>5</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_18', instruction='call', instanceName='decisionTable_1', methodName='articlesNumber', args=[]}</instruction>
+        <slimResult>fail(10&gt;10)</slimResult>
+        <expectation>
+          <status>fail</status>
+          <instructionId>decisionTable_1_18</instructionId>
+          <col>1</col>
+          <row>5</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>10&gt;10</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_20', instruction='call', instanceName='decisionTable_1', methodName='setSectionName', args=[Tech]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_20</instructionId>
+          <col>0</col>
+          <row>6</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_22', instruction='call', instanceName='decisionTable_1', methodName='articlesNumber', args=[]}</instruction>
+        <slimResult>fail(10&gt;10)</slimResult>
+        <expectation>
+          <status>fail</status>
+          <instructionId>decisionTable_1_22</instructionId>
+          <col>1</col>
+          <row>6</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>10&gt;10</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_24', instruction='call', instanceName='decisionTable_1', methodName='setSectionName', args=[extra]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_24</instructionId>
+          <col>0</col>
+          <row>7</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_26', instruction='call', instanceName='decisionTable_1', methodName='articlesNumber', args=[]}</instruction>
+        <slimResult>pass(14&gt;10)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_26</instructionId>
+          <col>1</col>
+          <row>7</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>14&gt;10</evaluationMessage>
+        </expectation>
+      </instructionResult>
+    </instructions>
+  </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp /Users/kriczq/XP_Project/fitnesse-standalone.jar:/Users/kriczq/XP_Project/./acceptance-tests/target/acceptance-tests-1-jar-with-dependencies.jar:/Users/kriczq/XP_Project/./acceptance-tests/target/acceptance-tests-1.jar fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>0</right>
+    <wrong>1</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>6591</totalRunTimeInMillis>
+</testResults>
+

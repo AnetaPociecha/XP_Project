@@ -3,11 +3,21 @@ Test
 ---
 !define TEST_SYSTEM {slim}
 
-!path ./articlescraper/target/articlescraper-1-jar-with-dependencies.jar
+!path ./acceptance-tests/target/*.jar
+
+!3 ''Sprawdza poprawność tytułu dla artykułu o danym url.''
 
 !|import|
-|com.agh.technology.xp.project.webscraper.articlescraper|
+|com.agh.technology.xp.project.webscraper|
 
-!|com.agh.technology.xp.project.webscraper.articlescraper.ArticleClientAcceptanceTest|
+!|com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest|
 |url|title?|
 |https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special|Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie|
+|https://biznes.interia.pl/gospodarka/news-branza-lotnicza-apeluje-do-premiera-o-zniesienie-ograniczeni,nId,4548693|Branża lotnicza apeluje do premiera o zniesienie ograniczenia liczby miejsc w samolotach|
+|https://fakty.interia.pl/swiat/news-fort-trump-nie-powstanie-georgette-mosbacher-reaguje,nId,4548713|Fort Trump nie powstanie? Georgette Mosbacher reaguje|
+|https://fakty.interia.pl/polska/news-akcja-teczowe-disco-pod-palacem-pawel-rabiej-szykuja-prowoka,nId,4548788|Akcja "Tęczowe disco pod Pałacem". Paweł Rabiej: Szykują prowokację|
+|https://biznes.interia.pl/firma/news-zaplata-gotowka-za-usluge-a-limit-15-tys-zl,nId,4537473|Zapłata gotówką za usługę a limit 15 tys. zł|
+|https://sport.interia.pl/robert-kubica/news-seria-dtm-robert-kubica-osmy-w-ostatnim-dniu-testow,nId,4548704|Seria DTM. Robert Kubica ósmy w ostatnim dniu testów|
+|https://sport.interia.pl/bundesliga/news-puchar-niemiec-media-zachwycaja-sie-robertem-lewandowskim,nId,4548579|Puchar Niemiec. Media zachwycają się Robertem Lewandowskim|
+|https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-mazowieckie-koronawirus-na-komunii,nId,4548778|Mazowieckie: Koronawirus na komunii|
+|https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718|Policja: Nożownik ze szkoły we Vrutkach stwarzał wcześniej problemy|

@@ -8,6 +8,8 @@ Remember about maven clean install before running test
 
 |'''Nasze testy'''  
 |[[Acticle Scraper][.FrontPage.articletest]]                                   |''Sprawdza poprawność tytułu dla artykułu o danym url''|
+|[[Acticle Content Check][.FrontPage.ArticleScraperContent]]                    |''Sprawdza czy sparsowana treść artykułu zawiera dane zdania''|
+|[[Acticles Number In Section][.FrontPage.ArticlesNumberInSection]]          |''Sprawdza ilość sparsowanych artykułów w każdej z sekcji''|
 
 |'''To Learn More...'''                                                                                            |
 |[[User Guide][.FitNesse.UserGuide]]                                   |''Answer the rest of your questions here.''|

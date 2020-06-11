@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20200501</FitNesseVersion>
+  <rootPath>FrontPage.articletest</rootPath>
+  <result>
+    <counts>
+      <right>9</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <date>2020-06-11T21:57:50+02:00</date>
+    <runTimeInMillis>6854</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: ./acceptance-tests/target/*.jar&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="2"&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;url&lt;/td&gt;
+		&lt;td&gt;title?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;https://biznes.interia.pl/gospodarka/news-branza-lotnicza-apeluje-do-premiera-o-zniesienie-ograniczeni,nId,4548693&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Branża lotnicza apeluje do premiera o zniesienie ograniczenia liczby miejsc w samolotach&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://fakty.interia.pl/swiat/news-fort-trump-nie-powstanie-georgette-mosbacher-reaguje,nId,4548713&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Fort Trump nie powstanie? Georgette Mosbacher reaguje&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;https://fakty.interia.pl/polska/news-akcja-teczowe-disco-pod-palacem-pawel-rabiej-szykuja-prowoka,nId,4548788&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Akcja "Tęczowe disco pod Pałacem". Paweł Rabiej: Szykują prowokację&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://biznes.interia.pl/firma/news-zaplata-gotowka-za-usluge-a-limit-15-tys-zl,nId,4537473&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Zapłata gotówką za usługę a limit 15 tys. zł&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;https://sport.interia.pl/robert-kubica/news-seria-dtm-robert-kubica-osmy-w-ostatnim-dniu-testow,nId,4548704&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Seria DTM. Robert Kubica ósmy w ostatnim dniu testów&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://sport.interia.pl/bundesliga/news-puchar-niemiec-media-zachwycaja-sie-robertem-lewandowskim,nId,4548579&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Puchar Niemiec. Media zachwycają się Robertem Lewandowskim&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-mazowieckie-koronawirus-na-komunii,nId,4548778&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Mazowieckie: Koronawirus na komunii&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Policja: Nożownik ze szkoły we Vrutkach stwarzał wcześniej problemy&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>articletest</relativePageName>
+    <instructions>
+      <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.agh.technology.xp.project.webscraper'}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>import_0_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ImportExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest', args=[]}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_0</instructionId>
+          <col>0</col>
+          <row>0</row>
+          <type>ConstructionExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_4</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_6', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_6</instructionId>
+          <col>1</col>
+          <row>2</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_8', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://biznes.interia.pl/gospodarka/news-branza-lotnicza-apeluje-do-premiera-o-zniesienie-ograniczeni,nId,4548693]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_8</instructionId>
+          <col>0</col>
+          <row>3</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_10', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Branża lotnicza apeluje do premiera o zniesienie ograniczenia liczby miejsc w samolotach)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_10</instructionId>
+          <col>1</col>
+          <row>3</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Branża lotnicza apeluje do premiera o zniesienie ograniczenia liczby miejsc w samolotach</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_12', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/swiat/news-fort-trump-nie-powstanie-georgette-mosbacher-reaguje,nId,4548713]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_12</instructionId>
+          <col>0</col>
+          <row>4</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_14', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Fort Trump nie powstanie? Georgette Mosbacher reaguje)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_14</instructionId>
+          <col>1</col>
+          <row>4</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Fort Trump nie powstanie? Georgette Mosbacher reaguje</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_16', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/polska/news-akcja-teczowe-disco-pod-palacem-pawel-rabiej-szykuja-prowoka,nId,4548788]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_16</instructionId>
+          <col>0</col>
+          <row>5</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_18', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Akcja "Tęczowe disco pod Pałacem". Paweł Rabiej: Szykują prowokację)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_18</instructionId>
+          <col>1</col>
+          <row>5</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Akcja "Tęczowe disco pod Pałacem". Paweł Rabiej: Szykują prowokację</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_20', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://biznes.interia.pl/firma/news-zaplata-gotowka-za-usluge-a-limit-15-tys-zl,nId,4537473]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_20</instructionId>
+          <col>0</col>
+          <row>6</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_22', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Zapłata gotówką za usługę a limit 15 tys. zł)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_22</instructionId>
+          <col>1</col>
+          <row>6</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Zapłata gotówką za usługę a limit 15 tys. zł</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_24', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://sport.interia.pl/robert-kubica/news-seria-dtm-robert-kubica-osmy-w-ostatnim-dniu-testow,nId,4548704]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_24</instructionId>
+          <col>0</col>
+          <row>7</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_26', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Seria DTM. Robert Kubica ósmy w ostatnim dniu testów)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_26</instructionId>
+          <col>1</col>
+          <row>7</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Seria DTM. Robert Kubica ósmy w ostatnim dniu testów</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_28', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://sport.interia.pl/bundesliga/news-puchar-niemiec-media-zachwycaja-sie-robertem-lewandowskim,nId,4548579]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_28</instructionId>
+          <col>0</col>
+          <row>8</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_30', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Puchar Niemiec. Media zachwycają się Robertem Lewandowskim)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_30</instructionId>
+          <col>1</col>
+          <row>8</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Puchar Niemiec. Media zachwycają się Robertem Lewandowskim</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_32', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-mazowieckie-koronawirus-na-komunii,nId,4548778]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_32</instructionId>
+          <col>0</col>
+          <row>9</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_34', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Mazowieckie: Koronawirus na komunii)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_34</instructionId>
+          <col>1</col>
+          <row>9</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Mazowieckie: Koronawirus na komunii</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_36', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/swiat/news-policja-nozownik-ze-szkoly-we-vrutkach-stwarzal-wczesniej-pr,nId,4548718]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_36</instructionId>
+          <col>0</col>
+          <row>10</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_38', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Policja: Nożownik ze szkoły we Vrutkach stwarzał wcześniej problemy)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_38</instructionId>
+          <col>1</col>
+          <row>10</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Policja: Nożownik ze szkoły we Vrutkach stwarzał wcześniej problemy</evaluationMessage>
+        </expectation>
+      </instructionResult>
+    </instructions>
+  </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp /Users/kriczq/XP_Project/fitnesse-standalone.jar:/Users/kriczq/XP_Project/./acceptance-tests/target/acceptance-tests-1-jar-with-dependencies.jar:/Users/kriczq/XP_Project/./acceptance-tests/target/acceptance-tests-1.jar fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>1</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>7466</totalRunTimeInMillis>
+</testResults>
+

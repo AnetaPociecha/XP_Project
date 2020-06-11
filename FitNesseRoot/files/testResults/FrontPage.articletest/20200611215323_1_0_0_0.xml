@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20200501</FitNesseVersion>
+  <rootPath>FrontPage.articletest</rootPath>
+  <result>
+    <counts>
+      <right>1</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>0</exceptions>
+    </counts>
+    <date>2020-06-11T21:53:23+02:00</date>
+    <runTimeInMillis>2329</runTimeInMillis>
+    <content>&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: ./acceptance-tests/target/*.jar&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor0"&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td colspan="2"&gt;&lt;span class="pass"&gt;com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowTitle"&gt;
+		&lt;td&gt;url&lt;/td&gt;
+		&lt;td&gt;title?&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="slimRowColor1"&gt;
+		&lt;td&gt;https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special&lt;/td&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+</content>
+    <relativePageName>articletest</relativePageName>
+    <instructions>
+      <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.agh.technology.xp.project.webscraper'}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>import_0_0</instructionId>
+          <col>0</col>
+          <row>1</row>
+          <type>ImportExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest', args=[]}</instruction>
+        <slimResult>pass(com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_0</instructionId>
+          <col>0</col>
+          <row>0</row>
+          <type>ConstructionExpectation</type>
+          <evaluationMessage>com.agh.technology.xp.project.webscraper.ArticleClientAcceptanceTest</evaluationMessage>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setUrl', args=[https://fakty.interia.pl/raporty/raport-koronawirus-chiny/polska/news-kolejne-zachorowania-u-redemptorystow-136-ksiezy-w-kwarantan,nId,4537967#iwa_source=special]}</instruction>
+        <slimResult></slimResult>
+        <expectation>
+          <instructionId>decisionTable_1_4</instructionId>
+          <col>0</col>
+          <row>2</row>
+          <type>VoidReturnExpectation</type>
+        </expectation>
+      </instructionResult>
+      <instructionResult>
+        <instruction>{id='decisionTable_1_6', instruction='call', instanceName='decisionTable_1', methodName='title', args=[]}</instruction>
+        <slimResult>pass(Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie)</slimResult>
+        <expectation>
+          <status>pass</status>
+          <instructionId>decisionTable_1_6</instructionId>
+          <col>1</col>
+          <row>2</row>
+          <type>ReturnedValueExpectation</type>
+          <evaluationMessage>Kolejne zachorowania u redemptorystów. 136 księży w kwarantannie</evaluationMessage>
+        </expectation>
+      </instructionResult>
+    </instructions>
+  </result>
+  <executionLog>
+    <testSystem>slim:fitnesse.slim.SlimService</testSystem>
+    <command>java -cp /Users/kriczq/XP_Project/fitnesse-standalone.jar:/Users/kriczq/XP_Project/./acceptance-tests/target/acceptance-tests-1-jar-with-dependencies.jar:/Users/kriczq/XP_Project/./acceptance-tests/target/acceptance-tests-1.jar fitnesse.slim.SlimService 1</command>
+    <exitCode>0</exitCode>
+    <stdOut></stdOut>
+    <stdErr></stdErr>
+  </executionLog>
+  <finalCounts>
+    <right>1</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>0</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>2868</totalRunTimeInMillis>
+</testResults>
+
