@@ -29,12 +29,12 @@ public class ConfigReader {
 
             port = (String) jsonObject.get("port");
 
-            sections = getSections(jsonObject.get("sections"));
+            sections = getSections(jsonObject.get("sectionsSelectors"));
 
 
         } catch (IOException | ParseException e) {
             System.out.println("Nie znaleziono pliku konfiguracyjnego. Zastosowano domyślne ustawienia");
-            sections = Arrays.asList("facts", "business", "sport", "automotive", "technologies", "tiles");
+            sections = Arrays.asList("#facts", "#business", "#sport", "#automotive", "#technologies", "#tiles");
             return new ConfigData("www.interia.pl", "443", sections);
         }
         return new ConfigData(host, port, sections);
@@ -43,7 +43,7 @@ public class ConfigReader {
     private List<String> getSections(Object jsonSections){
         JSONArray sectionsArray = (JSONArray)jsonSections;
 
-        return new ArrayList<String>(sectionsArray);
+        return new ArrayList<String>(sectionsArray); // TODO: Is there anything we can do about "unckecked assignment" when parsing .json's ?
     }
 }
 

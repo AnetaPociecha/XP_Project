@@ -8,17 +8,16 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ArticleHeadersParserImpl implements ArticleHeadersParser {
-    private final List<String> sectionsToParse;
+    private final List<String> sectionsSelectors;
     private String targetUrl;
 
     public ArticleHeadersParserImpl(String targetUrl, List<String> sections) {
-        this.sectionsToParse = sections;
+        this.sectionsSelectors = sections;
         this.targetUrl = targetUrl;
     }
 
@@ -28,7 +27,9 @@ public class ArticleHeadersParserImpl implements ArticleHeadersParser {
     }
 
     public ArticleContainer parseDocument(Document doc) {
-        Stream<Element> sectionElements = sectionsToParse.stream().map(doc::getElementById);
+        Element bodyElem = doc.body();
+        // If there are multiple elements with same path, first is taken into account as section root
+        Stream<Element> sectionElements = sectionsSelectors.stream().map(bodyElem::selectFirst);
         List<ArticleSection> sections = sectionElements.map(this::parseSection).collect(Collectors.toList());
         return new ArticleContainer(sections);
     }
