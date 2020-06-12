@@ -1,3 +1,5 @@
+import com.agh.technology.xp.project.webscraper.articles.config.ArticleHeadersParserConfig;
+import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.InvalidGetterStrategyException;
 import com.agh.technology.xp.project.webscraper.articlescraper.*;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
@@ -9,8 +11,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class InteriaArticleClientTest {
 
     @Test
-    void getInteriaArticle() throws HttpRequestException {
-        IArticleParser parser = new InteriaArticleParser();
+    void getInteriaArticle() throws HttpRequestException, InvalidGetterStrategyException {
+        ArticleHeadersParserConfig articleHeadersParserConfig = ArticleHeadersParserConfig.defaultConfig();
+        IArticleParser parser = new InteriaArticleParser(articleHeadersParserConfig);
         ArticleDetailsClient validClient = new ArticleDetailsClient(new MockHttpClient(), parser);
         ArticleDetailsClient invalidClient = new ArticleDetailsClient(new ExceptionHttpClient(), parser);
 

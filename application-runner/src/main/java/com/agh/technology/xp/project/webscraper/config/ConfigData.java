@@ -1,9 +1,12 @@
 package com.agh.technology.xp.project.webscraper.config;
 
+import com.agh.technology.xp.project.webscraper.articles.config.ArticleConfig;
 import com.agh.technology.xp.project.webscraper.articles.config.ArticleHeadersParserConfig;
 import com.agh.technology.xp.project.webscraper.articles.config.HeaderConfig;
 import com.agh.technology.xp.project.webscraper.articles.config.SectionConfig;
 import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.AttributeGetter;
+import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.GetterType;
+import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.HTMLGetterStrategy;
 import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.InvalidGetterStrategyException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -11,6 +14,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 @SuppressWarnings("unused")
@@ -41,9 +45,15 @@ public class ConfigData {
         String urlSelector = (String) articleHeaderConfigJSON.get("urlSelector");
         AttributeGetter articleTitleGetterConfig = JSONOperations.getNestedAttributeGetter((JSONObject) JSONOperations.getNestedObjectValue(articleHeaderConfigJSON, "title"));
 
+        JSONObject articleContentConfigJSON = (JSONObject) JSONOperations.getNestedObjectValue(parsedConfig, "articleContentConfig");
+        String headlineSelector = (String) articleContentConfigJSON.get("headlineSelector");
+        String bodySelector = (String) articleContentConfigJSON.get("bodySelector");
+
         SectionConfig sectionConfig = new SectionConfig(sectionsSelectors, sectionNameGetterConfig);
         HeaderConfig headerConfig = new HeaderConfig(urlSelector, articleTitleGetterConfig);
-        return new ArticleHeadersParserConfig(sectionConfig, headerConfig);
+        ArticleConfig articleConfig = new ArticleConfig(headlineSelector, bodySelector);
+
+        return new ArticleHeadersParserConfig(sectionConfig, headerConfig, articleConfig);
 
     }
 
@@ -53,6 +63,4 @@ public class ConfigData {
         return "https://" + host + ':' + port;
 
     }
-
-
 }

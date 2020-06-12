@@ -29,13 +29,9 @@ public class ArticleHeadersParserImpl implements ArticleHeadersParser {
     private ArticleHeadersParserConfig articleHeadersParserConfig;
 
 
-    public ArticleHeadersParserImpl(String targetUrl, ArticleHeadersParserConfig articleHeadersParserConfig) throws InvalidGetterStrategyException {
+    public ArticleHeadersParserImpl(String targetUrl, ArticleHeadersParserConfig articleHeadersParserConfig) {
         this.targetUrl = targetUrl;
-        if (articleHeadersParserConfig != null) {
-            this.articleHeadersParserConfig = articleHeadersParserConfig;
-        } else {
-            this.articleHeadersParserConfig = defaultConfig();
-        }
+        this.articleHeadersParserConfig = articleHeadersParserConfig;
     }
 
     public ArticleContainer fetchAndParse() throws IOException {
@@ -81,30 +77,6 @@ public class ArticleHeadersParserImpl implements ArticleHeadersParser {
         } else {
             return "Other (name not found)";
         }
-    }
-
-    private ArticleHeadersParserConfig defaultConfig() throws InvalidGetterStrategyException {
-
-
-        List<String> sectionsSelectors = Arrays.asList(
-                "#facts",
-                "#business",
-                "#sport",
-                "#automotive",
-                "#technologies",
-                "#tiles"
-        );
-        HTMLGetterStrategy sectionNameAttributeGetterStrategy = new HTMLGetterStrategy(GetterType.ATTRIBUTE, "title", "Inne");
-        AttributeGetter sectionNameGetterConfig = new AttributeGetter("a.header-a", sectionNameAttributeGetterStrategy);
-
-        String urlSelector = "a.news-a, a.articles-a, a.news-one-a, a.special-a, a.special-triple-a, a.news-gallery-a, a.tiles-a";
-
-        HTMLGetterStrategy articleTitleAttributeGetterStrategy = new HTMLGetterStrategy(GetterType.ATTRIBUTE, "title", null);
-        AttributeGetter articleTitleGetterConfig = new AttributeGetter("a.news-a, a.articles-a, a.news-one-a, a.special-a, a.special-triple-a, a.news-gallery-a, a.tiles-a" , articleTitleAttributeGetterStrategy);
-
-        SectionConfig sectionConfig = new SectionConfig(sectionsSelectors, sectionNameGetterConfig);
-        HeaderConfig headerConfig = new HeaderConfig(urlSelector, articleTitleGetterConfig);
-        return new ArticleHeadersParserConfig(sectionConfig, headerConfig);
     }
 }
 

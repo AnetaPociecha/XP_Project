@@ -24,5 +24,9 @@
       "getterType": "ATTRIBUTE",
       "attributeKey": "title"
     }
+  },
+  "articleContentConfig": {
+    "headlineSelector": "[itemprop='name headline']",
+    "bodySelector": "[itemprop=articleBody] > p"
   }
 }

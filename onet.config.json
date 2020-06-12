@@ -1,0 +1,30 @@
+{
+  "host": "www.onet.pl",
+  "port": "443",
+  "sectionConfig": {
+    "selectors": [
+      "section[data-section=news]",
+      "section[data-section=sport]",
+      "section[data-section=economy]",
+      "section[data-section=entertainment]",
+      "section[data-section=tech]",
+      "section[data-section=moto]"
+    ],
+    "name": {
+      "selector": "a.titleHeaderLink",
+      "getterType": "CONTENT",
+      "default": "Inne"
+    }
+  },
+  "articleConfig": {
+    "urlSelector": "li > a",
+    "title": {
+      "selector": "li > a > span.title",
+      "getterType": "CONTENT"
+    }
+  },
+  "articleContentConfig": {
+    "headlineSelector": "h1.mainTitle",
+    "bodySelector": "#detail p.hyphenate, #detail h2, #lead"
+  }
+}
