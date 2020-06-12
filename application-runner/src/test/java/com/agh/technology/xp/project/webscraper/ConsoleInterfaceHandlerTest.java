@@ -1,5 +1,6 @@
 package com.agh.technology.xp.project.webscraper;
 
+import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.InvalidGetterStrategyException;
 import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParserImpl;
 import com.agh.technology.xp.project.webscraper.articles.parser.HttpClientImpl;
 import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
@@ -17,12 +18,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class ConsoleInterfaceHandlerTest {
 
     @Test
-    void runCLI() {
+    void runCLI() throws InvalidGetterStrategyException {
         String resourceUrl = "https://www.interia.pl";
         ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler.ConsoleInterfaceHandlerBuilder()
                 .parser(new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
                         .httpClient(new HttpClientImpl())
-                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl, Arrays.asList("facts", "business", "sport", "automotive", "technologies")))
+                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl, null))
                         .targetUrl(resourceUrl)
                         .build())
                 .articleDetailsClient(

@@ -1,41 +1,58 @@
 package com.agh.technology.xp.project.webscraper.config;
 
+import com.agh.technology.xp.project.webscraper.articles.config.ArticleHeadersParserConfig;
+import com.agh.technology.xp.project.webscraper.articles.config.HeaderConfig;
+import com.agh.technology.xp.project.webscraper.articles.config.SectionConfig;
+import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.AttributeGetter;
+import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.InvalidGetterStrategyException;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 @SuppressWarnings("unused")
 public class ConfigData {
 
-    private String host;
-    private String port;
-    private List<String> sections;
+    public JSONObject parsedConfig;
 
-    public ConfigData(String host, String port, List<String> sections) {
-        this.host = host;
-        this.port = port;
-        this.sections = sections;
+    private ConfigData(JSONObject jsonObject) {
+        this.parsedConfig = jsonObject;
     }
 
-    public String getHost() {
-        return host;
+
+    public static ConfigData fromFile(String fileName) throws IOException, ParseException {
+        JSONParser parser = new JSONParser();
+
+        Object obj = parser.parse(new FileReader(fileName));
+        JSONObject jsonObject = (JSONObject) obj;
+        return new ConfigData(jsonObject);
     }
 
-    public void setHost(String host) {
-        this.host = host;
+    public ArticleHeadersParserConfig getHeadersParserConfig() throws InvalidGetterStrategyException {
+        JSONObject sectionConfigJSON = (JSONObject) JSONOperations.getNestedObjectValue(parsedConfig, "sectionConfig");
+
+        List<String> sectionsSelectors = JSONOperations.getStringListValue(sectionConfigJSON, "selectors");
+        AttributeGetter sectionNameGetterConfig = JSONOperations.getNestedAttributeGetter((JSONObject) JSONOperations.getNestedObjectValue(sectionConfigJSON, "name"));
+
+        JSONObject articleHeaderConfigJSON = (JSONObject) JSONOperations.getNestedObjectValue(parsedConfig, "articleConfig");
+        String urlSelector = (String) articleHeaderConfigJSON.get("urlSelector");
+        AttributeGetter articleTitleGetterConfig = JSONOperations.getNestedAttributeGetter((JSONObject) JSONOperations.getNestedObjectValue(articleHeaderConfigJSON, "title"));
+
+        SectionConfig sectionConfig = new SectionConfig(sectionsSelectors, sectionNameGetterConfig);
+        HeaderConfig headerConfig = new HeaderConfig(urlSelector, articleTitleGetterConfig);
+        return new ArticleHeadersParserConfig(sectionConfig, headerConfig);
+
     }
 
-    public String getPort() {
-        return port;
+    public String getURL(){
+        String host = (String) parsedConfig.get("host");
+        String port = (String) parsedConfig.get("port");
+        return "https://" + host + ':' + port;
+
     }
 
-    public void setPort(String port) {
-        this.port = port;
-    }
 
-    public String createUrl(){
-        return "https://" + getHost() + ":" + getPort();
-    }
-
-    public List<String> getSections(){
-        return this.sections;
-    }
 }
