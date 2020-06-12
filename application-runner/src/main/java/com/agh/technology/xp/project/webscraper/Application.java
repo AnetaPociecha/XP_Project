@@ -7,10 +7,13 @@ import com.agh.technology.xp.project.webscraper.articlescraper.HttpClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.ArticleDetailsClient;
 import com.agh.technology.xp.project.webscraper.articles.parser.InteriaArticlesListClient;
 import com.agh.technology.xp.project.webscraper.articlescraper.InteriaArticleParser;
+import com.agh.technology.xp.project.webscraper.config.ConfigData;
 import com.agh.technology.xp.project.webscraper.config.ConfigReader;
 import com.agh.technology.xp.project.webscraper.io.CLIPrinter;
 import com.agh.technology.xp.project.webscraper.io.CLIScanner;
 import com.agh.technology.xp.project.webscraper.validate.UrlValidatorFacade;
+
+import java.util.List;
 
 public class Application {
 
@@ -18,8 +21,10 @@ public class Application {
 
     public static void main(String[] args) {
         ConfigReader configReader = new ConfigReader();
+        ConfigData configData = configReader.readConfigFile();
 
-        String resourceUrl = configReader.readConfigFile().createUrl();
+        String resourceUrl = configData.createUrl();
+        List<String> sectionsToParse = configData.getSections();
         if (!UrlValidatorFacade.isValid(resourceUrl)) {
             resourceUrl = DEFAULT_TARGET_URL;
         }
@@ -27,7 +32,7 @@ public class Application {
         ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler.ConsoleInterfaceHandlerBuilder()
                 .parser(new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
                     .httpClient(new HttpClientImpl())
-                    .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
+                    .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl, sectionsToParse))
                     .targetUrl(resourceUrl)
                     .build())
                 .articleDetailsClient(

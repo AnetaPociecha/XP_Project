@@ -1,4 +1,5 @@
 {
   "host": "www.interia.pl",
-  "port": "443"
+  "port": "443",
+  "sections": ["facts", "business", "sport", "automotive", "technologies", "tiles"]
 }

@@ -9,12 +9,13 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ArticleHeadersParserTest {
-    private final ArticleHeadersParserImpl parser = new ArticleHeadersParserImpl("");
+    private final ArticleHeadersParserImpl parser = new ArticleHeadersParserImpl("", Arrays.asList("facts", "business", "sport", "automotive", "technologies"));
 
     @Test
     void shouldParseSection() throws IOException {

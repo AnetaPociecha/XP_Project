@@ -14,10 +14,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ArticleHeadersParserImpl implements ArticleHeadersParser {
-    private static final List<String> sectionsToParse = Arrays.asList("facts", "business", "sport", "automotive", "technologies", "tiles");
+    private final List<String> sectionsToParse;
     private String targetUrl;
 
-    public ArticleHeadersParserImpl(String targetUrl) {
+    public ArticleHeadersParserImpl(String targetUrl, List<String> sections) {
+        this.sectionsToParse = sections;
         this.targetUrl = targetUrl;
     }
 

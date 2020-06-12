@@ -10,6 +10,8 @@ import com.agh.technology.xp.project.webscraper.io.CLIPrinter;
 import com.agh.technology.xp.project.webscraper.io.IScanner;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ConsoleInterfaceHandlerTest {
@@ -20,7 +22,7 @@ class ConsoleInterfaceHandlerTest {
         ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler.ConsoleInterfaceHandlerBuilder()
                 .parser(new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
                         .httpClient(new HttpClientImpl())
-                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
+                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl, Arrays.asList("facts", "business", "sport", "automotive", "technologies")))
                         .targetUrl(resourceUrl)
                         .build())
                 .articleDetailsClient(
