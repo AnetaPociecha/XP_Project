@@ -12,9 +12,9 @@ Test
 
 !|com.agh.technology.xp.project.webscraper.SectionAcceptanceTest|
 |sectionName|articlesList?|
-|Fakty|=~/"Tęczowe disco pod Pałacem". Prowokacja?/|
-|Biznes|=~/Unia Owocowa bije na alarm zagrożone jabłka i gruszki w całej UE/|
-|Sport|=~/Członek klubu z koronawirusem. Mecz przełożony/|
-|Moto|=~/Pasażerowie zatrzymali pijanego kierowcę autobusu/|
-|Tech|=~/Topniejąca wieczna zmarzlina to bomba zegarowa/|
-|extra|=~/"Mam talent": Christina Rae zachwyciła jurorów/|
+|Fakty|=~/Szumowski ostrzega: Będziemy mieli wiele zwrotów akcji/|
+|Biznes|=~/Złoty może się osłabiać; rentowności SPW pójdą w dół/|
+|Sport|=~/Formuła 1. Odwołanie wyścigów w Azerbejdżanie, Singapurze i Japonii/|
+|Moto|=~/Fiat E-Ducato - teraz również elektryczny/|
+|Tech|=~/3nm procesory Apple A16 już w 2022 roku/|
+|extra|=~/Dodatkowy silnik elektryczny zamiast turbo?/|
