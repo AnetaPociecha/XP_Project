@@ -25,8 +25,19 @@ class InteriaArticlesListClientTest {
         ArticleContainer container = client.fetchAndParse();
 
         assertNotNull(container.getAllSections());
+        assertFalse(container.getAllSections().isEmpty());
+        container.getAllSections().forEach(section -> {
+            assertNotNull(section);
+            assertNotNull(section.getName());
+            assertFalse(section.getName().isEmpty());
+        });
+
         assertNotNull(container.getAllTitles());
         assertFalse(container.getAllTitles().isEmpty());
+        container.getAllTitles().forEach(title -> {
+            assertNotNull(title);
+            assertFalse(title.isEmpty());
+        });
     }
 
     @Test
