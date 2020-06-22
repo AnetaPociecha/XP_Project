@@ -1,3 +1,5 @@
+import com.agh.technology.xp.project.webscraper.articles.config.ArticleHeadersParserConfig;
+import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.InvalidGetterStrategyException;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
 import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParserImpl;
 import com.agh.technology.xp.project.webscraper.articles.parser.HttpClientImpl;
@@ -11,12 +13,12 @@ import static org.junit.jupiter.api.Assertions.*;
 class InteriaArticlesListClientTest {
 
     @Test
-    void fetchAndParseValidURL() throws IOException {
+    void fetchAndParseValidURL() throws IOException, InvalidGetterStrategyException {
 
         String url = "https://www.interia.pl:443";
         InteriaArticlesListClient client = new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
                 .httpClient(new HttpClientImpl())
-                .articleHeadersParser(new ArticleHeadersParserImpl(url))
+                .articleHeadersParser(new ArticleHeadersParserImpl(url, ArticleHeadersParserConfig.defaultConfig()))
                 .targetUrl(url)
                 .build();
 
@@ -41,12 +43,12 @@ class InteriaArticlesListClientTest {
     }
 
     @Test
-    void fetchAndParseInvalidURL() {
+    void fetchAndParseInvalidURL() throws InvalidGetterStrategyException {
 
         String url = "https://www.interiaaaa.pl:443";
         InteriaArticlesListClient client = new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
                 .httpClient(new HttpClientImpl())
-                .articleHeadersParser(new ArticleHeadersParserImpl(url))
+                .articleHeadersParser(new ArticleHeadersParserImpl(url, ArticleHeadersParserConfig.defaultConfig()))
                 .targetUrl(url)
                 .build();
 
