@@ -11,9 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class InteriaArticleClientTest {
 
     @Test
-    void getInteriaArticle() throws HttpRequestException, InvalidGetterStrategyException {
+    void getInteriaArticleMock() throws HttpRequestException, InvalidGetterStrategyException {
         ArticleHeadersParserConfig articleHeadersParserConfig = ArticleHeadersParserConfig.defaultConfig();
         IArticleParser parser = new InteriaArticleParser(articleHeadersParserConfig);
+        IArticleParser parser = new InteriaArticleParser();
+
         ArticleDetailsClient validClient = new ArticleDetailsClient(new MockHttpClient(), parser);
         ArticleDetailsClient invalidClient = new ArticleDetailsClient(new ExceptionHttpClient(), parser);
 
@@ -21,6 +23,20 @@ class InteriaArticleClientTest {
         assertThrows(HttpRequestException.class, () -> invalidClient.getInteriaArticle(""), "test" );
 
         IArticle article = validClient.getInteriaArticle("");
+        assertNotNull(article.getTitle());
+        assertNotNull(article.getContent());
+    }
+
+    @Test
+    void getInteriaArticleOnline() throws HttpRequestException {
+        IArticleParser parser = new InteriaArticleParser();
+        ArticleDetailsClient client = new ArticleDetailsClient(new HttpClient(), parser);
+        String url = "https://fakty.interia.pl/raporty/raport-wybory-prezydenckie-2020/aktualnosci/news-pozew-w-trybie-wyborczym-przeciwko-rafalowi-trzaskowskiemu-j,nId,4563414";
+
+        assertDoesNotThrow(() -> client.getInteriaArticle(url));
+        assertThrows(HttpRequestException.class, () -> client.getInteriaArticle(url+":)"));
+
+        IArticle article = client.getInteriaArticle(url);
         assertNotNull(article.getTitle());
         assertNotNull(article.getContent());
     }
