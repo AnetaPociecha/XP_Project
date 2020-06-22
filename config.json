@@ -1,4 +1,32 @@
 {
   "host": "www.interia.pl",
-  "port": "443"
+  "port": "443",
+  "sectionConfig": {
+    "selectors": [
+      "#facts",
+      "#business",
+      "#sport",
+      "#automotive",
+      "#technologies",
+      "#tiles"
+    ],
+    "name": {
+      "selector": "a.header-a",
+      "getterType": "ATTRIBUTE",
+      "attributeKey": "title",
+      "default": "Inne"
+    }
+  },
+  "articleConfig": {
+    "urlSelector": "a.news-a, a.articles-a, a.news-one-a, a.special-a, a.special-triple-a, a.news-gallery-a, a.tiles-a",
+    "title": {
+      "selector": "a.news-a, a.articles-a, a.news-one-a, a.special-a, a.special-triple-a, a.news-gallery-a, a.tiles-a",
+      "getterType": "ATTRIBUTE",
+      "attributeKey": "title"
+    }
+  },
+  "articleContentConfig": {
+    "headlineSelector": "[itemprop='name headline']",
+    "bodySelector": "[itemprop=articleBody] > p"
+  }
 }
