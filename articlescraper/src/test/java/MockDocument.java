@@ -9,7 +9,7 @@ class MockDocument {
 
     static final String TITLE = "Sekretarz generalny ONZ Antonio Guterres: Pandemia uruchomiła tsunami nienawiści";
 
-    static final String ARTICLE_CONTENT = "Sekretarz generalny ONZ Antonio Guterres powiedział w piątek, że pandemia koronawirusa uruchomiła na świecie \"tsunami nienawiści, ksenofobii\", chęć znalezienia winnych i \"kozłów ofiarnych\". Zaapelował do mediów społecznościowych o usuwanie szkodliwych treści.\n" +
+    static final String ARTICLE_CONTENT = "Sekretarz generalny ONZ Antonio Guterres powiedział w piątek, że pandemia koronawirusa uruchomiła na świecie \"tsunami nienawiści, ksenofobii\", chęć znalezienia winnych i \"kozłów ofiarnych\". Zaapelował do mediów społecznościowych o usuwanie szkodliwych treści.\n\n" +
             "\"Nienawiść do cudzoziemców wzrasta zarówno online, jak i na ulicach, pojawiły się antysemickie teorie spiskowe i ataki na muzułmanów\", a wszystko to jest związane z pandemią koronawirusa - powiedział Guterres.\n" +
             "\"Migranci i uchodźcy są przedstawiani jako źródło zakażeń (...). O starszych osobach, które są najbardziej narażone, robione są memy sugerujące, że są to osoby najbardziej zbędne\" - kontynuował szef ONZ.\n" +
             "Zaapelował do mediów, a zwłaszcza mediów społecznościowych, instytucji edukacyjnych oraz rządów, aby podjęli walkę z takimi zachowaniami oraz kształcili ludzi, których \"internetowy analfabetyzm\" sprawia, że łatwo padają ofiarą ekstremistów siejących w sieci nienawiść i teorie spiskowe.\n" +

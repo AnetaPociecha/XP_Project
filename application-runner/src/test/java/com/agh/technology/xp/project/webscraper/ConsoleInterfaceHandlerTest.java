@@ -24,7 +24,7 @@ class ConsoleInterfaceHandlerTest {
         ConsoleInterfaceHandler delegate = new ConsoleInterfaceHandler.ConsoleInterfaceHandlerBuilder()
                 .parser(new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
                         .httpClient(new HttpClientImpl())
-                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl, null))
+                        .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl, ArticleHeadersParserConfig.defaultConfig()))
                         .targetUrl(resourceUrl)
                         .build())
                 .articleDetailsClient(

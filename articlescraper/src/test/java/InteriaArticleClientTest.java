@@ -12,9 +12,7 @@ class InteriaArticleClientTest {
 
     @Test
     void getInteriaArticleMock() throws HttpRequestException, InvalidGetterStrategyException {
-        ArticleHeadersParserConfig articleHeadersParserConfig = ArticleHeadersParserConfig.defaultConfig();
-        IArticleParser parser = new InteriaArticleParser(articleHeadersParserConfig);
-        IArticleParser parser = new InteriaArticleParser();
+        IArticleParser parser = new InteriaArticleParser(ArticleHeadersParserConfig.defaultConfig());
 
         ArticleDetailsClient validClient = new ArticleDetailsClient(new MockHttpClient(), parser);
         ArticleDetailsClient invalidClient = new ArticleDetailsClient(new ExceptionHttpClient(), parser);
@@ -28,8 +26,8 @@ class InteriaArticleClientTest {
     }
 
     @Test
-    void getInteriaArticleOnline() throws HttpRequestException {
-        IArticleParser parser = new InteriaArticleParser();
+    void getInteriaArticleOnline() throws HttpRequestException, InvalidGetterStrategyException {
+        IArticleParser parser = new InteriaArticleParser(ArticleHeadersParserConfig.defaultConfig());
         ArticleDetailsClient client = new ArticleDetailsClient(new HttpClient(), parser);
         String url = "https://fakty.interia.pl/raporty/raport-wybory-prezydenckie-2020/aktualnosci/news-pozew-w-trybie-wyborczym-przeciwko-rafalowi-trzaskowskiemu-j,nId,4563414";
 

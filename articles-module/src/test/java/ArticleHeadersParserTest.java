@@ -1,4 +1,5 @@
 
+import com.agh.technology.xp.project.webscraper.articles.config.ArticleHeadersParserConfig;
 import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.InvalidGetterStrategyException;
 import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParserImpl;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
@@ -16,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ArticleHeadersParserTest {
-    private final ArticleHeadersParserImpl parser = new ArticleHeadersParserImpl("", null);
+    private final ArticleHeadersParserImpl parser = new ArticleHeadersParserImpl("", ArticleHeadersParserConfig.defaultConfig());
 
     ArticleHeadersParserTest() throws InvalidGetterStrategyException {
     }
