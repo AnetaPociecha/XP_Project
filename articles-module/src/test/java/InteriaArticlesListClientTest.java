@@ -30,8 +30,24 @@ class InteriaArticlesListClientTest {
         assertFalse(container.getAllSections().isEmpty());
         container.getAllSections().forEach(section -> {
             assertNotNull(section);
+
             assertNotNull(section.getName());
             assertFalse(section.getName().isEmpty());
+
+            assertNotNull(section.getTitles());
+            section.getTitles().forEach(title -> {
+                assertNotNull(title);
+                assertFalse(title.isEmpty());
+            });
+
+            assertNotNull(section.getArcticleHeaders());
+            section.getArcticleHeaders().forEach(header -> {
+                assertNotNull(header);
+                assertNotNull(header.getTitle());
+                assertFalse(header.getTitle().isEmpty());
+                assertNotNull(header.getUrl());
+                assertFalse(header.getUrl().isEmpty());
+            });
         });
 
         assertNotNull(container.getAllTitles());
