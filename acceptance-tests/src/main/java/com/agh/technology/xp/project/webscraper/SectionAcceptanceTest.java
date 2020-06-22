@@ -1,6 +1,8 @@
 package com.agh.technology.xp.project.webscraper;
 
 
+import com.agh.technology.xp.project.webscraper.articles.config.ArticleHeadersParserConfig;
+import com.agh.technology.xp.project.webscraper.articles.config.getterstrategy.InvalidGetterStrategyException;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleContainer;
 import com.agh.technology.xp.project.webscraper.articles.datamodel.ArticleSection;
 import com.agh.technology.xp.project.webscraper.articles.parser.ArticleHeadersParserImpl;
@@ -19,12 +21,12 @@ public class SectionAcceptanceTest {
         this.sectionName = sectionName;
     }
 
-    public int articlesNumber() throws IOException {
+    public int articlesNumber() throws IOException, InvalidGetterStrategyException {
         String resourceUrl = "https://www.interia.pl";
-        IArticleParser parser = new InteriaArticleParser();
+        IArticleParser parser = new InteriaArticleParser(ArticleHeadersParserConfig.defaultConfig());
         InteriaArticlesListClient interiaArticlesListClient = new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
                 .httpClient(new HttpClientImpl())
-                .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
+                .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl, ArticleHeadersParserConfig.defaultConfig()))
                 .targetUrl(resourceUrl)
                 .build();
 
@@ -35,12 +37,12 @@ public class SectionAcceptanceTest {
         return sectionOptional.map(articleSection -> articleSection.getArcticleHeaders().size()).orElse(0);
     }
 
-    public String articlesList() throws IOException {
+    public String articlesList() throws IOException, InvalidGetterStrategyException {
         String resourceUrl = "https://www.interia.pl";
-        IArticleParser parser = new InteriaArticleParser();
+        IArticleParser parser = new InteriaArticleParser(ArticleHeadersParserConfig.defaultConfig());
         InteriaArticlesListClient interiaArticlesListClient = new InteriaArticlesListClient.InteriaArticlesListClientBuilder()
                 .httpClient(new HttpClientImpl())
-                .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl))
+                .articleHeadersParser(new ArticleHeadersParserImpl(resourceUrl, ArticleHeadersParserConfig.defaultConfig()))
                 .targetUrl(resourceUrl)
                 .build();
 
