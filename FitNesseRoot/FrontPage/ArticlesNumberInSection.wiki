@@ -17,4 +17,4 @@ Test
 |Sport|>10|
 |Moto|10|
 |Tech|10|
-|extra|>10|
+|Inne|>10|
